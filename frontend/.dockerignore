@@ -1,0 +1,16 @@
+# Ignore node modules (to prevent copying unnecessary files)
+node_modules/
+npm-debug.log
+yarn-error.log
+pnpm-debug.log
+
+# Ignore local environment files
+
+# Ignore build output (only if NOT using multi-stage builds)
+
+# Ignore Git and editor files
+.git/
+.gitignore
+.DS_Store
+.vscode/
+.idea/
