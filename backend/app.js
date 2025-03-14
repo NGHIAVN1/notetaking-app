@@ -1,23 +1,30 @@
-const express = require('express');
-require('dotenv').config()
-const connectDb = require('./config/db');
 
-const app = express();
+const mongoose = require('mongoose');
+require('dotenv').config({path: './src/configs/.env'}); // Import and configure dotenv
 
-connectDb;
+// import users from './src/models/users';
+const useUser = require('./src/models/users');
+var cors = require('cors');
+const connect = require("./src/configs/database")
+const auth = require('./src/routes/routes');
+ const express = require('express');
+ const app = express();
+ const bodyParser = require('body-parser');
+const routes = require('./src/routes/routes');
+// const { authenticateToken } = require('./src/middlewares/auth');
+ app.set('view engine', 'html');
+ app.use(bodyParser.json());
+ app.use(bodyParser.urlencoded({ extended: true }));
+ app.use(cors());
 
-app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
-
-
-app.get('/', (req, res) => {
-  res.send('Hello World');
-});
-
-app.use('/', (req, res) => {
-  res.send('Welcome to the Note Taking App');
-} );  
-
-app.listen(process.env.PORT, () => {
-  console.log(`Server is running on port ${process.env.PORT}`);
-});
+connect;
+app.use(routes);
+app.use('/',(req, res) => {
+    res.status(200).json({
+      message: 'active',
+    });
+  });
+const port = process.env.PORT;
+app.listen(port,
+() => console.log(`Server running on port ${port}`)
+)

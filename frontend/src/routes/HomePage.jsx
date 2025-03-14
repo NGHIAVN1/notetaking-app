@@ -1,8 +1,8 @@
-import React from "react";
-import Note from "../components/features/Note";
+import React, { useContext } from "react";
 import { Box, Grid2 } from "@mui/material";
-import Notes from "../components/pages/notes";
-
+import Note from "../components/Notes/Note";
+// import { DataContext } from "../context/DataProvider";
+import Notes from "../components/Notes/Notes";
 const HomePage = () => {
   return (
     <Box

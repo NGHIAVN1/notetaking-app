@@ -3,22 +3,19 @@ services:
   playground-web-db:
     image: mongo
     environment:
-      MONGO_INITDB_DATABASE: playground-web
+      MONGO_INITDB_DATABASE: notetaking-app
     ports:
       - 27017:27017
   playground-web-frontend:
-    image: playground-web-frontend:latest
+    image: playbackground-frontend:latest
     environment:
       PORT: 3000
       PROXY_API: http://playground-web-backend:5000/
-    volumes:
-      
-
     ports:
       - 3000:80
   playground-web-backend:
     image: playground-web-backend:latest
     environment:
-      MONGODB_URI: mongodb://playground-web-db:27017/playground-web
+      MONGODB_URI: mongodb://playground-web-db:27017/notetaking-app
     ports:
       - 5000:5000

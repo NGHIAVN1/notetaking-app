@@ -4,15 +4,14 @@ import DarkModeIcon from "@mui/icons-material/DarkMode";
 import TabBar from "../features/TabBar.jsx";
 import Box from "@mui/material/Box";
 import Header from "../features/Navbar.jsx";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import { lightMode, darkMode } from "../features/DarkMode.jsx";
 import { CssBaseline, Grid2, IconButton } from "@mui/material";
 import SearchLive from "../features/SearchLive.jsx";
 import WbSunnyIcon from "@mui/icons-material/WbSunny";
 import AccountUser from "../../common/AcountUser.jsx";
-import HomPage from "./Root.jsx";
-import Notes from "./notes.jsx";
-import Note from "../features/Note.jsx";
+import { DataContext } from "../../context/DataProvider.jsx";
+
 // example data structure
 const users = [
   { firstName: "John", id: 1 },
@@ -36,7 +35,7 @@ let body = {
   // justifyItems: "center",
   bgcolor: "background.default",
 };
-export default function () {
+export default function Root() {
   const [theme, setTheme] = useState(lightMode);
   const [click, setClick] = useState(false);
   const [isSidebarOpen, setIsSidebarOpen] = useState(true);
@@ -55,32 +54,37 @@ export default function () {
   }
 
   return (
-    <ThemeProvider theme={theme}>
-      <CssBaseline />
-      <Box component={"nav"} sx={{}}>
-        <Header mode={theme}>
-          <SearchLive users={users} setFilterSearch={setFilterSearch} />
-          <IconButton onClick={switchMode}>
-            {!click ? <DarkModeIcon /> : <WbSunnyIcon />}
-          </IconButton>
-          <AccountUser />
-        </Header>
-      </Box>
-      {/* // Sidebar */}
-      <Box
-        component={"header"}
-        position={"fixed"}
-        sx={{
-          marginTop: "48px",
-          height: "100vh",
-          width: "20%",
-          float: "left",
-        }}
-      >
-        <TabBar />
-      </Box>
-      {/* Body part */}
-      {/* <Box
+    <DataContext.Provider value={users}>
+      <ThemeProvider theme={theme}>
+        <CssBaseline />
+        <Box component={"nav"} sx={{}}>
+          <Header mode={theme}>
+            <SearchLive
+              filterSearch={filterSearch}
+              users={users}
+              setFilterSearch={setFilterSearch}
+            ></SearchLive>
+            <IconButton onClick={switchMode}>
+              {!click ? <DarkModeIcon /> : <WbSunnyIcon />}
+            </IconButton>
+            <AccountUser />
+          </Header>
+        </Box>
+        {/* // Sidebar */}
+        <Box
+          component={"header"}
+          position={"fixed"}
+          sx={{
+            marginTop: "48px",
+            height: "100vh",
+            width: "20%",
+            float: "left",
+          }}
+        >
+          <TabBar />
+        </Box>
+        {/* Body part */}
+        {/* <Box
         component={"main"}
         position={"sticky"}
         sx={{
@@ -93,7 +97,8 @@ export default function () {
       >
         Hello
       </Box> */}
-      <Outlet />
-    </ThemeProvider>
+        <Outlet />
+      </ThemeProvider>
+    </DataContext.Provider>
   );
 }

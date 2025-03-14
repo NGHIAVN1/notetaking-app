@@ -1,13 +1,17 @@
-import { Box } from "@mui/material";
+import { Box, ClickAwayListener } from "@mui/material";
 import TextField from "@mui/material/TextField";
 import SearchIcon from "@mui/icons-material/Search";
 import InputAdornment from "@mui/material/InputAdornment";
 import { useState } from "react";
 import IconButton from "@mui/material/IconButton";
+import { Link, Navigate, NavLink, useNavigate } from "react-router-dom";
 
-const SearchLives = ({ users, setFilterSearch }) => {
+const SearchLives = ({ users, setFilterSearch, filterSearch }) => {
   console.log(users);
   const [searchItem, setSearchItem] = useState("");
+  let navigate = useNavigate();
+
+  const [click, setClick] = useState(false);
   const handleSearch = (event) => {
     const searchTerms = event.target.value;
     setSearchItem(searchTerms);
@@ -20,12 +24,14 @@ const SearchLives = ({ users, setFilterSearch }) => {
   };
 
   return (
-    <Box component="form" sx={{ flexGrow: 1 }}>
+    <Box component="form" sx={{ flexGrow: 1, paddingLeft: "10%" }}>
+      {}
       <TextField
         size="small"
         placeholder="Search notes..."
         value={searchItem}
         onChange={handleSearch}
+        onClick={() => navigate("search")}
         sx={{
           bgcolor: "background.paper",
           borderRadius: 1,

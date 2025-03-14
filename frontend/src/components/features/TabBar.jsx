@@ -6,12 +6,11 @@ import CreateIcon from "@mui/icons-material/Create";
 import ListItemIcon from "@mui/material/ListItemIcon";
 import ListItemButton from "@mui/material/ListItemButton";
 import List from "@mui/material/List";
-import HomeIcon from "@mui/icons-material/Home";
 import LightbulbIcon from "@mui/icons-material/Lightbulb";
 import DeleteIcon from "@mui/icons-material/Delete";
 import { styled } from "@mui/material/styles";
 import { Button, Typography } from "@mui/material";
-import CreateTags from "./createTags";
+import CreateTags from "./CreateTags.jsx";
 
 const NavLink = styled(Link)(({ theme }) => ({
   textDecoration: "none",

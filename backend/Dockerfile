@@ -7,7 +7,7 @@ COPY package*.json ./
 
 RUN npm install
 
-COPY .env ./
+COPY /src/configs/.env ./
 
 COPY . .
 

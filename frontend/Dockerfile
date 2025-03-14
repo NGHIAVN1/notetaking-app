@@ -1,18 +1,19 @@
 # Build Stage
-FROM node:18-alpine AS build
+FROM node:alpine3.11 AS build
 
 RUN mkdir -p /app
 
 WORKDIR /app
 
 # Copy package.json and install dependencies
-COPY package*.json ./
+COPY package*.json /
+
 
 RUN npm install
 
+COPY . . /app/
 
 # Copy the rest of the app
-COPY . .
 
 # Pass environment variables at build time
 ARG PORT=3000
@@ -26,14 +27,14 @@ ENV PROXY_API=${PROXY_API}
 ENV PROXY_LOGIN=${PROXY_LOGIN}
 
 # Ensure a clean production build
-RUN npm run build && ls -l /app/dist
+RUN npm run build
 
 # Production Stage
 FROM nginx:stable-alpine AS production
 
 # Copy built files from previous stage
 COPY --from=build /app/dist /usr/share/nginx/html
-
+COPY --from=build /app/dist /etc/nginx/html
 # Expose port 80 for the web server
 EXPOSE 80
 
