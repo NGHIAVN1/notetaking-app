@@ -58,8 +58,8 @@ jobs:
         uses: docker/login-action@343f7c4344506bcbf9b4de18042ae17996df046d # v3.0.0
         with:
           registry: ${{ env.REGISTRY }}
-          username: df8d48d8-575f-4dfc-bec5-03e8b0f48ed3
-          password: gAy8Q~Y44KsSIJIGgRU4i1Lo.JER~_sLBYKsIcK5
+          username: chatappcontainer.azurecr.io
+          password: eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IkVZSlg6Wkw3TjpRTEg3OkxMVkg6RFZZRTpFNlpPOlI0Sjc6N1Y2NDpYQUJEOlZWUkg6SVo1TjpZUlA0In0.eyJqdGkiOiI0NGFiM2Y0Ny05M2JhLTQzYTYtOGRjYi0zNzM2OTJhYjkyM2MiLCJzdWIiOiIzMTIwMjIxNDI0QHVlZC51ZG4udm4iLCJuYmYiOjE3NDE5MzEyMjUsImV4cCI6MTc0MTk0MjkyNSwiaWF0IjoxNzQxOTMxMjI1LCJpc3MiOiJBenVyZSBDb250YWluZXIgUmVnaXN0cnkiLCJhdWQiOiJjaGF0YXBwY29udGFpbmVyLmF6dXJlY3IuaW8iLCJ2ZXJzaW9uIjoiMS4wIiwicmlkIjoiYTNjZTkwOWE2ZjI1NDU1NjgwNmIwNzU1OWY5ZDRlZTYiLCJncmFudF90eXBlIjoicmVmcmVzaF90b2tlbiIsImFwcGlkIjoiMDRiMDc3OTUtOGRkYi00NjFhLWJiZWUtMDJmOWUxYmY3YjQ2IiwidGVuYW50IjoiMWU0ZjkxOWYtNTRmMy00ZThkLWFkNGYtN2I2YzdiYmQ4Mzg5IiwicGVybWlzc2lvbnMiOnsiYWN0aW9ucyI6WyJyZWFkIiwid3JpdGUiLCJkZWxldGUiLCJtZXRhZGF0YS9yZWFkIiwibWV0YWRhdGEvd3JpdGUiLCJkZWxldGVkL3JlYWQiLCJkZWxldGVkL3Jlc3RvcmUvYWN0aW9uIl19LCJyb2xlcyI6W119.X5S1ASQi5ocIns8WFkXwuFeQBVeMx4kVCFiqcwGU4jBQv9Av50o7-5hKFCUMjbJeYY8-Oral9OwkiOfkSgqUcbPdU1QGNtb0sHuLfmmP_rg4kXG0u7wpDxJzb0afNtPa0SizLPGc3d5QuxTk0nwDdaEtnwIoRghNfBI4mpvDDx4vfbih7v70sLvh6SX0eWQBXqvyZBugMTAodExLUh2hGSKPYMs19maA6SMj-rejwmW3u7yp3OWSe0ROKwp1lzeEjmWZ_NHd6_0dgwwLVKHfmU0hfmmPg-xKgGO-CabHh56tlg3U0WFPjgedg7OEjejZ_Za46mS_W7rhbUh3zotEpQ
 
       # Extract metadata (tags, labels) for Docker
       # https://github.com/docker/metadata-action
