@@ -10,11 +10,13 @@ import {
   FormHelperText,
   Alert,
 } from "@mui/material";
-import { NavLink } from "react-router-dom";
+import { Navigate, NavLink, useNavigate } from "react-router-dom";
 import { useState } from "react";
 import { signup } from "../../../api/auth";
 
 function RegisterPage() {
+  let navigate = useNavigate();
+
   const [formData, setFormData] = useState({
     username: "",
     email: "",
@@ -34,21 +36,19 @@ function RegisterPage() {
   };
 
   const handleSubmit = (e) => {
-    signup(formData)
-      .then((res) => {
-        <Alert severity="success">
-          {" "}
-          Bạn đã đăng ký tài khoản thành côngc.
-        </Alert>;
-        const data = res.data;
+    e.preventDefault();
+    console.log({ ...formData });
+    signup(formData.email, formData.username, formData.password)
+      .then((response) => {
+        const data = response.data;
         console.log(data);
-        return data;
+        alert("Bạn đã đăng ký tài khoản thành công");
+        navigate("/login");
       })
       .catch((err) => {
+        alert("Đăng ký thất bại");
         console.log(err);
       });
-
-    e.preventDefault();
 
     // Simple validation
     const newErrors = {};
@@ -67,7 +67,7 @@ function RegisterPage() {
 
     // If no errors, proceed with registration
     if (Object.keys(newErrors).length === 0) {
-      console.log("Form submitted:", formData);
+      console.log(formData);
       // Here you would call your API to register the user
     }
   };

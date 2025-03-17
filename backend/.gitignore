@@ -2,4 +2,4 @@ src/model/
 src/constrollers/
 routes/*.
 node_modules
-src/configs/.env
+*.env
