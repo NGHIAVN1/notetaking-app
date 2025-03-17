@@ -281,7 +281,6 @@ function DashboardLayoutAccountSidebar(props) {
       >
         <DemoPageContent pathname={pathname} />
         <Outlet />
-
       </DashboardLayout>
     </AppProvider>
   );

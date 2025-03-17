@@ -8,9 +8,11 @@ import {
   FormControlLabel,
   Checkbox,
   FormHelperText,
+  Alert,
 } from "@mui/material";
 import { NavLink } from "react-router-dom";
 import { useState } from "react";
+import { signup } from "../../../api/auth";
 
 function RegisterPage() {
   const [formData, setFormData] = useState({
@@ -32,6 +34,20 @@ function RegisterPage() {
   };
 
   const handleSubmit = (e) => {
+    signup(formData)
+      .then((res) => {
+        <Alert severity="success">
+          {" "}
+          Bạn đã đăng ký tài khoản thành côngc.
+        </Alert>;
+        const data = res.data;
+        console.log(data);
+        return data;
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+
     e.preventDefault();
 
     // Simple validation

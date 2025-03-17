@@ -8,9 +8,9 @@ const auth =require('../middlewares/auth')
  const routes = express.Router();
 
 routes.use(cors());
-// routes.get('/auth', auth.authenticateToken, (req, res)=>{
-//  res.json();
-// });
+routes.get('/auth', auth.authenticateToken, (req, res)=>{
+ res.json();
+});
 
 
 
