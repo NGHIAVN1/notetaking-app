@@ -1,21 +1,15 @@
 version: '3'
 services:
-  playground-web-db:
-    image: mongo
-    environment:
-      MONGO_INITDB_DATABASE: notetaking-app
-    ports:
-      - 27017:27017
-  playground-web-frontend:
-    image: playbackground-frontend:latest
+  notetaking-frontend:
+    image: notetaking-frontend:latest
     environment:
       PORT: 3000
-      PROXY_API: http://playground-web-backend:5000/
+      PROXY_API: http://notetaking-backend:5000/
     ports:
       - 3000:80
-  playground-web-backend:
-    image: playground-web-backend:latest
+  notetaking-backend:
+    image: notetaking-backend:latest
     environment:
-      MONGODB_URI: mongodb://playground-web-db:27017/notetaking-app
+      MONGODB_URI: mongodb+srv://nghiadoan369:WoW121315@database-app.mongocluster.cosmos.azure.com/?tls=true&authMechanism=SCRAM-SHA-256&retrywrites=false&maxIdleTimeMS=120000
     ports:
       - 5000:5000

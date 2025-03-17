@@ -52,13 +52,12 @@ const ListForm = ({ onSave, initialItems = [] }) => {
   };
 
   return (
-    <Paper
+    <Box
       elevation={3}
       sx={{
-        p: 2,
         maxWidth: 400,
         margin: "0 auto",
-        mt: 2,
+        padding: "0px",
       }}
     >
       <List>
@@ -119,7 +118,7 @@ const ListForm = ({ onSave, initialItems = [] }) => {
           }}
         />
       </Box>
-    </Paper>
+    </Box>
   );
 };
 

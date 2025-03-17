@@ -18,7 +18,7 @@ module.exports= {
     async ReadNotes(req, res){
     const data = await dataNote.find({});
     try {
-        res.json(data)
+        res.status(200).json(data);
     } catch (error) {
         res.status(400).send("Note not found");
     }

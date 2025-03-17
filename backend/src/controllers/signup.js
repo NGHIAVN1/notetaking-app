@@ -5,9 +5,9 @@ module.exports =
     const data = new  dataUser(req.body);
     try {
         await data.save();
-        res.redirect('/Users/login');
+        res.status(200);
     } catch (error) {
             console.log(error),
-            res.redirect('/Users/signup');
+            res.redirect('/users/signup');
     }
 }}

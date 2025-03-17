@@ -9,16 +9,22 @@ const bcrypt = require('bcrypt');
             type: String,
             required: true
           },
-            password: {
+
+        password: {
               type: String,
               required: true
-            }
+            },
+
+        // sessionToken: {
+        //       type: String,
+        //       required: false
+        //     }
       });
 
 UserSchema.pre('save', function(next){
   const user = this;
   const myplaintext = 10;
-  bcrypt.hash(user.password,myplaintext , (error, hash)=>{
+  bcrypt.hash(user.password, myplaintext, (error, hash)=>{
     user.password = hash;
     next();
   })

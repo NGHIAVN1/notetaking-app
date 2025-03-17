@@ -7,9 +7,40 @@ import {
   TextField,
   Typography,
 } from "@mui/material";
+import { useState } from "react";
 import { NavLink } from "react-router-dom";
+import auth from "../../../api/auth";
 
 function LoginPage() {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
+  const handleSubmit = async (e) => {
+    console.log("handle login");
+    auth(email, password)
+      .then(function (response) {
+        console.log(response);
+        alert("Đăng nhập thành công ");
+        const data = response.data;
+        console.log(data);
+        if (data) {
+          let token = data.accessToken;
+          localStorage.setItem("user-data", JSON.stringify(token));
+          // navigate("/");
+        } else {
+          localStorage.removeItem("user-data");
+        }
+      })
+      .catch((error) => {
+        console.log(error);
+        alert("Thông tin đăng nhập không chính xác");
+      });
+
+    e.preventDefault();
+
+    // return userData;
+  };
+
   return (
     <Box
       sx={{
@@ -42,6 +73,7 @@ function LoginPage() {
         <TextField
           label="Tài khoản"
           placeholder="Tài khoản người dùng "
+          onChange={(e) => setEmail(e.target.value)}
           fullWidth
           sx={{
             marginTop: "20px",
@@ -51,6 +83,7 @@ function LoginPage() {
         <TextField
           label="Mật khẩu"
           type="password"
+          onChange={(e) => setPassword(e.target.value)}
           placeholder="Nhập mật khẩu"
           fullWidth
           sx={{
@@ -66,6 +99,7 @@ function LoginPage() {
             variant="contained"
             fullWidth
             sx={{ marginTop: "20px", marginBottom: "20px" }}
+            onClick={handleSubmit}
           >
             Đăng nhập
           </Button>

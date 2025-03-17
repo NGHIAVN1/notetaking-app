@@ -7,7 +7,7 @@ ConnectDb().catch(
 )
 async function ConnectDb(){
 await  mongoose.connect(process.env.MONGODB_URI).then(
-    console.log(process.env.MONGODB_URI)
+    console.log("connect success")
 ).catch(
     (err)=>console.log(err)
 );

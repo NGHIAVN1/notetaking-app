@@ -1,4 +1,4 @@
-const collection =require('../models/collection');
+const collection =require('../models/labels');
 const db = require('../models/users')
 // const  decode = require('./decodetoken')
 const jwt = require('jsonwebtoken')
