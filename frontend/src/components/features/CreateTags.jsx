@@ -8,45 +8,37 @@ import {
   TextField,
 } from "@mui/material";
 import React from "react";
-
+import labelService from "../../../api/label";
+import { useState } from "react";
 const CreateTags = ({ close, props }) => {
-  console.log(props);
+  const [label, setLabel] = useState();
+  const handleSubmit = (e) => {
+    labelService
+      .createLabel(label)
+      .then((res) => {
+        console.log(res.data);
+        alert("Tạo nhãn thành công");
+        setLabel("");
+        return res.data;
+      })
+      .catch((err) => console.log(err));
+    e.preventDefault();
+  };
   return (
     <div>
-      <Dialog
-        open={props}
-        onClose={close}
-        slotProps={{
-          paper: {
-            component: "form",
-            onSubmit: (event) => {
-              event.preventDefault();
-              const formData = new FormData(event.currentTarget);
-              const formJson = Object.fromEntries(formData.entries());
-              const email = formJson.email;
-              console.log(email);
-              close;
-            },
-          },
-        }}
-      >
+      <Dialog open={props} onClose={close}>
         <DialogTitle>Tạo nhãn</DialogTitle>
         <DialogContent>
           <TextField
-            autoFocus
+            placeholder="Tên nhãn"
             required
-            margin="dense"
-            id="tags"
-            name="email"
-            label="Tạo nhãn"
-            type="text"
+            onChange={(e) => setLabel(e.target.value)}
             fullWidth
-            variant="standard"
           />
         </DialogContent>
         <DialogActions>
           <Button onClick={close}>Thôi</Button>
-          <Button type="submit">Xong</Button>
+          <Button onClick={handleSubmit}>Xong</Button>
         </DialogActions>
       </Dialog>
     </div>

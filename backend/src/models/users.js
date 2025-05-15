@@ -15,10 +15,10 @@ const bcrypt = require('bcrypt');
               required: true
             },
 
-        // sessionToken: {
-        //       type: String,
-        //       required: false
-        //     }
+        sessionToken: {
+              type: String,
+              required: false
+            }
       });
 
 UserSchema.pre('save', function(next){

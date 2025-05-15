@@ -61,7 +61,7 @@ function selectIcon() {
   );
 }
 
-const Note = () => {
+const Note = ({ save, setSave }) => {
   const [open, setOpen] = useState(true);
   console.log(open);
   function addNotesForm() {
@@ -74,7 +74,7 @@ const Note = () => {
   return (
     <div>
       <Box>
-        <Form />
+        <Form setSavingData={setSave} savingData={save} />
       </Box>
     </div>
   );

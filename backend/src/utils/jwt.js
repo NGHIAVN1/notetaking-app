@@ -8,9 +8,9 @@ require("dotenv").config({
 dotenv.config();
 
 const generateToken = (userId) => {
-  return jwt.sign({ user_id: userId }, process.env.TOKEN_SECRET, {
+  return jwt.sign({_id: userId }, process.env.TOKEN_SECRET, {
     expiresIn: process.env.JWT_EXPIRATION,
   });
 };
 
-module.exports = { generateToken };
+module.exports =  {generateToken} ;

@@ -1,0 +1,8 @@
+{
+    "servers": {
+        "frontend": {
+            "type": "sse",
+            "url": "http://localhost:3100/mcp-sse"
+        }
+    }
+}

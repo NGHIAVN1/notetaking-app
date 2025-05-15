@@ -18,6 +18,7 @@ export const signup = (emailIp, usernameIp, passwordIp) => {
 };
 
 export const logOut = () => {
+  const userToken = localStorage.getItem("user-data");
   const config = {
     headers: { Authorization: `Bearer ${userToken}` },
   };

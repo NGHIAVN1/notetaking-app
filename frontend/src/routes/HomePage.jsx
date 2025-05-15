@@ -1,9 +1,19 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { Box, Grid2 } from "@mui/material";
 import Note from "../components/Notes/Note";
 // import { DataContext } from "../context/DataProvider";
 import Notes from "../components/Notes/Notes";
+import { isAuth } from "../util/auth";
+import { useNavigate } from "react-router-dom";
 const HomePage = () => {
+  const [save, setSave] = useState(false);
+  console.log(save);
+  const navigate = useNavigate();
+  useEffect(() => {
+    if (!isAuth()) {
+      navigate("/login");
+    }
+  }, []);
   return (
     <Box
       component={"main"}
@@ -12,24 +22,21 @@ const HomePage = () => {
         flexGrow: "1",
         width: "80%",
         float: "right",
-        marginTop: "48px",
-        justifyItems: "center",
+        marginTop: "100px",
       }}
     >
       {/* <HomPage /> */}
-      <Note />
-      <Grid2
-        container
-        spacing={{ xs: 1, sm: 2, md: 3 }}
-        columns={{ xs: 4, sm: 8, md: 12, lg: 16 }}
-        sx={{ margin: "20px" }}
-      >
-        {Array.from({ length: 30 }, (_, index) => (
-          <Grid2 size={{ sm: 4, xs: 4, md: 4, xl: 3 }} key={index}>
-            <Notes> {index + 1}</Notes>
-          </Grid2>
-        ))}
-      </Grid2>
+      <Note setSave={setSave} save={save} />
+      <Box sx={{ display: "flex", justifyItems: "left" }}>
+        <Grid2
+          container
+          spacing={{ xs: 1, sm: 2, md: 3 }}
+          columns={{ xs: 4, sm: 8, md: 12, lg: 16 }}
+          sx={{ margin: "10px" }}
+        >
+          <Notes save={save} />
+        </Grid2>
+      </Box>
     </Box>
   );
 };

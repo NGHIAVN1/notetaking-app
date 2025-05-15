@@ -12,10 +12,21 @@ const auth = require('./src/routes/routes');
  const bodyParser = require('body-parser');
 const routes = require('./src/routes/routes');
 // const { authenticateToken } = require('./src/middlewares/auth');
+const corsOptions = {
+  origin: ['http://localhost:5173', 'http://localhost:3000'], // Add your frontend URLs
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'], // Include all methods you use
+  allowedHeaders: ['Content-Type', 'Authorization', 'x-access-token'],
+  credentials: true,
+  preflightContinue: false,
+  optionsSuccessStatus: 204
+};
+app.use(cors());
+
  app.set('view engine', 'html');
  app.use(bodyParser.json());
  app.use(bodyParser.urlencoded({ extended: true }));
- app.use(cors());
+ app.options('*', cors(corsOptions));
+
 
 connect;
 app.use(routes);

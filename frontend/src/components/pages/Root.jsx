@@ -1,5 +1,5 @@
 import { ThemeProvider } from "@mui/material/styles";
-import { Outlet } from "react-router-dom";
+import { Outlet, useNavigate } from "react-router-dom";
 import DarkModeIcon from "@mui/icons-material/DarkMode";
 import TabBar from "../features/TabBar.jsx";
 import Box from "@mui/material/Box";
@@ -10,7 +10,10 @@ import { CssBaseline, Grid2, IconButton } from "@mui/material";
 import SearchLive from "../features/SearchLive.jsx";
 import WbSunnyIcon from "@mui/icons-material/WbSunny";
 import AccountUser from "../../common/AcountUser.jsx";
-import { DataContext } from "../../context/DataProvider.jsx";
+import { isAuth } from "../../util/auth.js";
+import auth from "../../../api/auth.js";
+import systemNotes from "../../../api/notes.js";
+import DataContext from "../../context/DataProvider.jsx";
 
 // example data structure
 const users = [
@@ -35,70 +38,104 @@ let body = {
   // justifyItems: "center",
   bgcolor: "background.default",
 };
-export default function Root() {
+export default function Root({ protectRoute }) {
+  const [term, setTerm] = useState("");
+  const [apiNotes, setApiNotes] = useState([]);
+  const [filterNotes, setFilterNotes] = useState([]);
   const [theme, setTheme] = useState(lightMode);
   const [click, setClick] = useState(false);
+  const [search, setSearch] = useState();
   const [isSidebarOpen, setIsSidebarOpen] = useState(true);
-  const [filterSearch, setFilterSearch] = useState([]);
+  const [loadingCollection, setLoadingCollection] = useState("");
 
+  const navigate = useNavigate();
+  useEffect(() => {
+    systemNotes
+      .getNotes()
+      .then((data) => {
+        console.log(data);
+        setApiNotes(data);
+        setFilterNotes(data);
+        return data;
+      })
+      .catch((err) => {
+        return err;
+      });
+  }, []);
+  const setDark = localStorage.setItem("theme", "dark");
+  const setLight = localStorage.setItem("theme", "light");
+  const getTheme = localStorage.getItem("theme");
+
+  // Authentication User
+  console.log(loadingCollection);
+  useEffect(() => {
+    if (!isAuth()) {
+      navigate("/login");
+    }
+  }, []);
+
+  // Empty dependency array to run only once on component mount
   function handleToggleSidebar() {
     setIsSidebarOpen(!isSidebarOpen);
   }
-  console.log(users);
-  useEffect(() => {
-    setTheme(click ? darkMode : lightMode);
-  }, [click]);
+  console.log(filterNotes);
+  // useEffect(() => {
+  //   click
+  //     ? localStorage.setItem("theme", "dark")
+  //     : localStorage.setItem("theme", "light");
+  //   setTheme(localStorage.getItem("theme") == "dark" ? darkMode : lightMode);
+  // }, []);
 
   function switchMode() {
     setClick(!click);
   }
 
+  const dataResult = () => {
+    term.length === 0 ? filterNotes : undefined;
+  };
+  const result = dataResult;
+  console.log(term);
   return (
-    <DataContext.Provider value={users}>
-      <ThemeProvider theme={theme}>
-        <CssBaseline />
-        <Box component={"nav"} sx={{}}>
-          <Header mode={theme}>
-            <SearchLive
-              filterSearch={filterSearch}
-              users={users}
-              setFilterSearch={setFilterSearch}
-            ></SearchLive>
-            <IconButton onClick={switchMode}>
-              {!click ? <DarkModeIcon /> : <WbSunnyIcon />}
-            </IconButton>
-            <AccountUser />
-          </Header>
-        </Box>
-        {/* // Sidebar */}
-        <Box
-          component={"header"}
-          position={"fixed"}
-          sx={{
-            marginTop: "48px",
-            height: "100vh",
-            width: "20%",
-            float: "left",
-          }}
-        >
-          <TabBar />
-        </Box>
-        {/* Body part */}
-        {/* <Box
-        component={"main"}
-        position={"sticky"}
+    <ThemeProvider theme={theme}>
+      <CssBaseline />
+      <Box component={"nav"} sx={{}}>
+        <Header mode={theme}>
+          <SearchLive
+            term={term}
+            setTerm={setTerm}
+            apiNotes={apiNotes}
+            setFilterNotes={setFilterNotes}
+          ></SearchLive>
+          <IconButton onClick={switchMode}>
+            {!click ? <DarkModeIcon /> : <WbSunnyIcon />}
+          </IconButton>
+          <AccountUser />
+        </Header>
+      </Box>
+      {/* // Sidebar */}
+      <Box
+        component={"header"}
+        position={"fixed"}
         sx={{
-          flexGrow: "1",
-          width: "80%",
-          float: "right",
           marginTop: "48px",
-          justifyItems: "center",
+          height: "100vh",
+          width: "20%",
+          float: "left",
         }}
       >
-        Hello
-      </Box> */}
-        <Outlet />
-      </ThemeProvider>
-    </DataContext.Provider>
+        <TabBar setLoadingCollection={setLoadingCollection} />
+      </Box>
+
+      <DataContext.Provider
+        value={{
+          filterNotes: filterNotes,
+          term: term,
+          apiNotes: apiNotes,
+          loadingCollection: loadingCollection,
+        }}
+      >
+        <Outlet term={term} setTerm={setTerm} />
+      </DataContext.Provider>
+    </ThemeProvider>
   );
 }

@@ -30,7 +30,7 @@ ENV PROXY_LOGIN=${PROXY_LOGIN}
 RUN npm run build
 
 # Production Stage
-FROM nginx:stable-alpine AS production
+FROM nginx:1.28.0-alpine AS production
 
 # Copy built files from previous stage
 COPY --from=build /app/dist /usr/share/nginx/html
@@ -39,4 +39,3 @@ COPY --from=build /app/dist /etc/nginx/html
 EXPOSE 80
 
 # Start Nginx
-CMD ["nginx", "-g", "daemon off;"]

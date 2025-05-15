@@ -1,268 +1,307 @@
 import * as React from "react";
-import { useState } from "react";
 import Card from "@mui/material/Card";
+import CardActions from "@mui/material/CardActions";
 import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
-import Typography from "@mui/material/Typography";
-import IconButton from "@mui/material/IconButton";
 import Button from "@mui/material/Button";
-import CardActionArea from "@mui/material/CardActionArea";
-import CardActions from "@mui/material/CardActions";
-import Dialog from "@mui/material/Dialog";
-import DialogActions from "@mui/material/DialogActions";
-import DialogContent from "@mui/material/DialogContent";
-import DialogTitle from "@mui/material/DialogTitle";
-import TextField from "@mui/material/TextField";
-import Box from "@mui/material/Box";
-import Stack from "@mui/material/Stack";
-import Chip from "@mui/material/Chip";
-import CloseIcon from "@mui/icons-material/Close";
-import EditIcon from "@mui/icons-material/Edit";
-import AddPhotoAlternateIcon from "@mui/icons-material/AddPhotoAlternate";
+import Typography from "@mui/material/Typography";
+import {
+  CardActionArea,
+  Divider,
+  CircularProgress,
+  Box,
+  Alert,
+  Paper,
+  Snackbar,
+  Dialog,
+  DialogActions,
+  DialogContent,
+  DialogContentText,
+  DialogTitle,
+} from "@mui/material";
+import { useEffect, useState } from "react";
 import DeleteIcon from "@mui/icons-material/Delete";
+import EditIcon from "@mui/icons-material/Edit";
+import NoteAddIcon from "@mui/icons-material/NoteAdd";
+import Masonry from "@mui/lab/Masonry";
+import systemNotes from "../../../api/notes";
+import EditNote from "./EditNote";
+import LiveChecklistView from "./LiveChecklistView";
 
-export default function Notes({ children }) {
-  const [open, setOpen] = useState(false);
-  const [note, setNote] = useState({
-    title: "Lizard",
-    content:
-      "Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging across all continents except Antarctica",
-    image: "/src/assets/contemplative-reptile.jpg",
-    tags: ["animals", "reptiles"],
+export default function Notes({ title, content, _id, save }) {
+  const [notes, setNotes] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+  const [editingNote, setEditingNote] = useState(null);
+  const [isEditDialogOpen, setIsEditDialogOpen] = useState(false);
+  const [deleteConfirmOpen, setDeleteConfirmOpen] = useState(false);
+  const [deletingNoteId, setDeletingNoteId] = useState(null);
+  const [notification, setNotification] = useState({
+    open: false,
+    message: "",
+    severity: "success",
   });
 
-  const handleClickOpen = () => {
-    setOpen(true);
-  };
+  const fetchNotes = async () => {
+    console.log("Fetching notes...");
+    setLoading(true);
+    try {
+      const res = await systemNotes.getNotes();
+      console.log("Notes response:", res);
 
-  const handleClose = () => {
-    setOpen(false);
-  };
-
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setNote({
-      ...note,
-      [name]: value,
-    });
-  };
-
-  const handleSave = () => {
-    // Here you would save the note to your backend
-    console.log("Saving note:", note);
-    handleClose();
-  };
-
-  const handleAddTag = (e) => {
-    if (e.key === "Enter" && e.target.value) {
-      setNote({
-        ...note,
-        tags: [...note.tags, e.target.value],
-      });
-      e.target.value = "";
+      setNotes(Array.isArray(res) ? res : []);
+      setError(null);
+    } catch (err) {
+      console.error("Error fetching notes:", err);
+      setError(`Failed to load notes: ${err.message || "Unknown error"}`);
+    } finally {
+      setLoading(false);
     }
   };
 
-  const handleRemoveTag = (tagToDelete) => {
-    setNote({
-      ...note,
-      tags: note.tags.filter((tag) => tag !== tagToDelete),
+  useEffect(() => {
+    fetchNotes();
+  }, [save]);
+
+  // Edit note handlers
+  const handleEditClick = (note) => {
+    setEditingNote(note);
+    setIsEditDialogOpen(true);
+  };
+
+  const handleEditClose = () => {
+    setIsEditDialogOpen(false);
+    setEditingNote(null);
+  };
+
+  const handleNoteUpdated = () => {
+    fetchNotes();
+    setNotification({
+      open: true,
+      message: "Cập nhật ghi chú thành công!",
+      severity: "success",
     });
   };
 
+  // Delete note handlers
+  const handleDeleteClick = (noteId) => {
+    setDeletingNoteId(noteId);
+    setDeleteConfirmOpen(true);
+  };
+
+  const handleDeleteConfirmClose = () => {
+    setDeleteConfirmOpen(false);
+    setDeletingNoteId(null);
+  };
+
+  const handleDeleteConfirm = async () => {
+    if (!deletingNoteId) return;
+
+    try {
+      await systemNotes.deleteNote(deletingNoteId);
+      fetchNotes();
+      setNotification({
+        open: true,
+        message: "Đã xóa ghi chú!",
+        severity: "success",
+      });
+    } catch (err) {
+      console.error("Error deleting note:", err);
+      setNotification({
+        open: true,
+        message: "Không thể xóa ghi chú. Vui lòng thử lại.",
+        severity: "error",
+      });
+    } finally {
+      handleDeleteConfirmClose();
+    }
+  };
+
+  const handleNotificationClose = () => {
+    setNotification({ ...notification, open: false });
+  };
+
+  // Function to refresh notes after checklist item update
+  const handleChecklistUpdated = () => {
+    fetchNotes();
+  };
+
+  // Render loading state
+  if (loading) {
+    return (
+      <Box sx={{ display: "flex", justifyContent: "center", p: 4 }}>
+        <CircularProgress />
+      </Box>
+    );
+  }
+
+  // Render error state
+  if (error) {
+    return (
+      <Box sx={{ p: 2 }}>
+        <Alert severity="error">{error}</Alert>
+      </Box>
+    );
+  }
+
+  // Render empty state
+  if (!notes || notes.length === 0) {
+    return (
+      <Box sx={{ p: 4 }}>
+        <Paper elevation={1} sx={{ p: 3, textAlign: "center" }}>
+          <NoteAddIcon
+            sx={{ fontSize: 60, color: "primary.main", opacity: 0.7, mb: 2 }}
+          />
+          <Typography variant="h6" gutterBottom>
+            Không có ghi chú nào
+          </Typography>
+          <Typography variant="body2" color="text.secondary" sx={{ mb: 2 }}>
+            Bạn chưa có ghi chú nào. Hãy tạo ghi chú đầu tiên bằng cách sử dụng
+            biểu mẫu ở trên.
+          </Typography>
+        </Paper>
+      </Box>
+    );
+  }
+
+  // Render notes with Masonry layout
   return (
     <>
-      <Card
-        sx={{
-          minWidth: 238,
-          transition: "transform 0.3s, box-shadow 0.3s",
-          "&:hover": {
-            transform: "translateY(-5px)",
-            boxShadow: "0 10px 20px rgba(0,0,0,0.2)",
-          },
-        }}
-      >
-        <CardActionArea onClick={handleClickOpen}>
-          {note.image && (
-            <CardMedia
-              component="img"
-              height="140"
-              image={note.image}
-              alt={note.title}
-            />
-          )}
-          <CardContent>
-            <Typography gutterBottom variant="h5" component="div" noWrap>
-              {note.title}
-            </Typography>
-            <Typography
-              variant="body2"
-              color="text.secondary"
+      <Box sx={{ width: "100%", p: 2 }}>
+        <Masonry columns={{ xs: 1, sm: 2, md: 3, lg: 4, xl: 5 }} spacing={2}>
+          {notes.map((note) => (
+            <Card
+              key={note._id}
               sx={{
-                display: "-webkit-box",
-                WebkitLineClamp: 3,
-                WebkitBoxOrient: "vertical",
+                width: "100%",
+                display: "flex",
+                flexDirection: "column",
+                borderRadius: 2,
+                boxShadow:
+                  "0 1px 2px 0 rgba(60,64,67,0.3), 0 1px 3px 1px rgba(60,64,67,0.15)",
+                transition: "box-shadow 0.2s ease-in-out",
+                border: "1px solid #e0e0e0",
                 overflow: "hidden",
-                textOverflow: "ellipsis",
+                breakInside: "avoid",
+                "&:hover": {
+                  boxShadow:
+                    "0 1px 3px 0 rgba(60,64,67,0.302), 0 4px 8px 3px rgba(60,64,67,0.149)",
+                },
               }}
             >
-              {note.content}
-            </Typography>
-
-            {note.tags.length > 0 && (
-              <Box sx={{ mt: 2, display: "flex", flexWrap: "wrap", gap: 0.5 }}>
-                {note.tags.slice(0, 2).map((tag) => (
-                  <Chip
-                    key={tag}
-                    label={tag}
-                    size="small"
-                    color="primary"
-                    variant="outlined"
-                  />
-                ))}
-                {note.tags.length > 2 && (
-                  <Chip
-                    label={`+${note.tags.length - 2}`}
-                    size="small"
-                    color="default"
-                    variant="outlined"
-                  />
-                )}
-              </Box>
-            )}
-          </CardContent>
-        </CardActionArea>
-        <CardActions>
-          <IconButton size="small" color="primary" onClick={handleClickOpen}>
-            <EditIcon />
-          </IconButton>
-          <IconButton size="small" color="error">
-            <DeleteIcon />
-          </IconButton>
-        </CardActions>
-      </Card>
-
-      {/* Note Edit Dialog */}
-      <Dialog
-        open={open}
-        onClose={handleClose}
-        fullWidth
-        maxWidth="md"
-        PaperProps={{
-          elevation: 8,
-          sx: { borderRadius: 2 },
-        }}
-      >
-        <DialogTitle sx={{ m: 0, p: 2 }}>
-          <TextField
-            name="title"
-            value={note.title}
-            onChange={handleChange}
-            variant="standard"
-            fullWidth
-            placeholder="Title"
-            InputProps={{
-              disableUnderline: true,
-              style: { fontSize: "1.5rem", fontWeight: 500 },
-            }}
-          />
-          <IconButton
-            aria-label="close"
-            onClick={handleClose}
-            sx={{
-              position: "absolute",
-              right: 8,
-              top: 8,
-              color: (theme) => theme.palette.grey[500],
-            }}
-          >
-            <CloseIcon />
-          </IconButton>
-        </DialogTitle>
-        <DialogContent dividers>
-          <Box sx={{ display: "flex", flexDirection: "column", gap: 2 }}>
-            {note.image && (
-              <Box sx={{ position: "relative" }}>
+              {note.image ? (
                 <CardMedia
                   component="img"
-                  height="300"
                   image={note.image}
-                  alt={note.title}
-                  sx={{ borderRadius: 1 }}
-                />
-                <IconButton
                   sx={{
-                    position: "absolute",
-                    top: 8,
-                    right: 8,
-                    bgcolor: "rgba(255, 255, 255, 0.7)",
-                    "&:hover": {
-                      bgcolor: "rgba(255, 255, 255, 0.9)",
-                    },
+                    objectFit: "cover",
+                    maxHeight: 194,
+                    width: "100%",
                   }}
-                  onClick={() => setNote({ ...note, image: null })}
-                >
-                  <CloseIcon />
-                </IconButton>
-              </Box>
-            )}
-
-            <TextField
-              name="content"
-              value={note.content}
-              onChange={handleChange}
-              multiline
-              fullWidth
-              rows={8}
-              placeholder="Add note content..."
-              variant="outlined"
-            />
-
-            <Box>
-              <Typography variant="subtitle2" sx={{ mb: 1 }}>
-                Tags
-              </Typography>
-              <Stack
-                direction="row"
-                spacing={1}
-                sx={{ flexWrap: "wrap", gap: 1 }}
-              >
-                {note.tags.map((tag) => (
-                  <Chip
-                    key={tag}
-                    label={tag}
-                    onDelete={() => handleRemoveTag(tag)}
-                    color="primary"
-                  />
-                ))}
-                <TextField
-                  variant="outlined"
-                  size="small"
-                  placeholder="Add tag..."
-                  onKeyDown={handleAddTag}
-                  sx={{ maxWidth: "120px" }}
                 />
-              </Stack>
-            </Box>
-          </Box>
+              ) : null}
+              <CardContent sx={{ flexGrow: 1, pb: 1 }}>
+                {note.title && (
+                  <Typography
+                    variant="subtitle1"
+                    component="div"
+                    sx={{
+                      fontWeight: 500,
+                      mb: 1,
+                    }}
+                  >
+                    {note.title}
+                  </Typography>
+                )}
+
+                {note.type === "checklist" ? (
+                  <LiveChecklistView
+                    checklists={note.checklists}
+                    onChecklistUpdated={handleChecklistUpdated}
+                  />
+                ) : (
+                  <Typography
+                    variant="body2"
+                    color="text.secondary"
+                    sx={{
+                      wordBreak: "break-word",
+                      whiteSpace: "pre-wrap",
+                    }}
+                  >
+                    {note.content}
+                  </Typography>
+                )}
+              </CardContent>
+
+              <CardActions
+                sx={{
+                  padding: "4px 8px",
+                  display: "flex",
+                  justifyContent: "flex-end",
+                  opacity: 0.6,
+                  "&:hover": { opacity: 1 },
+                }}
+              >
+                <Button
+                  size="small"
+                  onClick={() => handleEditClick(note)}
+                  sx={{ minWidth: "auto", p: "6px" }}
+                >
+                  <EditIcon fontSize="small" />
+                </Button>
+                <Button
+                  size="small"
+                  color="error"
+                  onClick={() => handleDeleteClick(note._id)}
+                  sx={{ minWidth: "auto", p: "6px" }}
+                >
+                  <DeleteIcon fontSize="small" />
+                </Button>
+              </CardActions>
+            </Card>
+          ))}
+        </Masonry>
+      </Box>
+
+      {/* Edit Dialog */}
+      <EditNote
+        open={isEditDialogOpen}
+        handleClose={handleEditClose}
+        note={editingNote}
+        onNoteUpdated={handleNoteUpdated}
+      />
+
+      {/* Delete Confirmation Dialog */}
+      <Dialog open={deleteConfirmOpen} onClose={handleDeleteConfirmClose}>
+        <DialogTitle>Xác nhận xóa</DialogTitle>
+        <DialogContent>
+          <DialogContentText>
+            Bạn có chắc chắn muốn xóa ghi chú này không? Hành động này không thể
+            hoàn tác.
+          </DialogContentText>
         </DialogContent>
-        <DialogActions sx={{ p: 2, justifyContent: "space-between" }}>
-          <Button
-            startIcon={<AddPhotoAlternateIcon />}
-            onClick={() => console.log("Add image clicked")}
-          >
-            Add Image
+        <DialogActions>
+          <Button onClick={handleDeleteConfirmClose}>Hủy</Button>
+          <Button onClick={handleDeleteConfirm} color="error" autoFocus>
+            Xóa
           </Button>
-          <Box>
-            <Button onClick={handleClose} color="inherit">
-              Cancel
-            </Button>
-            <Button onClick={handleSave} variant="contained" sx={{ ml: 1 }}>
-              Save
-            </Button>
-          </Box>
         </DialogActions>
       </Dialog>
+
+      {/* Notification Snackbar */}
+      <Snackbar
+        open={notification.open}
+        autoHideDuration={4000}
+        onClose={handleNotificationClose}
+      >
+        <Alert
+          onClose={handleNotificationClose}
+          severity={notification.severity}
+          sx={{ width: "100%" }}
+        >
+          {notification.message}
+        </Alert>
+      </Snackbar>
     </>
   );
 }

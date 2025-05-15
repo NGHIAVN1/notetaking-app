@@ -6,21 +6,11 @@ import { useState } from "react";
 import IconButton from "@mui/material/IconButton";
 import { Link, Navigate, NavLink, useNavigate } from "react-router-dom";
 
-const SearchLives = ({ users, setFilterSearch, filterSearch }) => {
-  console.log(users);
-  const [searchItem, setSearchItem] = useState("");
+const SearchLives = ({ term, setTerm, apiNotes }) => {
   let navigate = useNavigate();
-
-  const [click, setClick] = useState(false);
   const handleSearch = (event) => {
-    const searchTerms = event.target.value;
-    setSearchItem(searchTerms);
-    const newFilter = users.filter((user) => {
-      return user.firstName.toLowerCase().includes(searchItem.toLowerCase());
-    });
-
-    // Implement search logic here
-    setFilterSearch(newFilter);
+    const inputSearch = event.target.value.toLowerCase();
+    setTerm(inputSearch);
   };
 
   return (
@@ -28,12 +18,13 @@ const SearchLives = ({ users, setFilterSearch, filterSearch }) => {
       {}
       <TextField
         size="small"
+        value={term}
         placeholder="Search notes..."
-        value={searchItem}
         onChange={handleSearch}
         onClick={() => navigate("search")}
         sx={{
           bgcolor: "background.paper",
+          backgroundColor: "rgba(0, 0, 0, .2)",
           borderRadius: 1,
           width: "400px",
         }}

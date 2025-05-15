@@ -1,13 +1,14 @@
 const  mongoose = require('mongoose');
+const ChecklistItem = require('./checklistitems');
 const NotesSchema = new mongoose.Schema({
-    user_id: { type: mongoose.Schema.Types.ObjectId, ref: 'User', required: true },
+  user_id: { type: mongoose.Schema.Types.ObjectId, ref: 'User', required: true },
   title: { type: String, maxlength: 255, required: false },
-  content: { type: String, required: true },
+  image: { type: String, required: false, default: undefined },
+  content: { type: String, required: false, default: undefined},
+  checklists: [{ type: mongoose.Schema.Types.ObjectId, ref: 'ChecklistItem' }],
+  type: { type: String, enum: ['text', 'checklist'], default: 'text' },
   deleted: { type: Boolean, default: false },
-  created_at: { type: Date, default: Date.now },
-  updated_at: { type: Date, default: Date.now },
-  labels: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Label' }],
-  checklists: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Checklist' }],
+  labels: { type: mongoose.Schema.Types.ObjectId, ref: 'Label' },
 },
     {timestamps: true}
 );

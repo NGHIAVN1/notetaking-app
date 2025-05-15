@@ -11,8 +11,9 @@ import {
   Alert,
 } from "@mui/material";
 import { Navigate, NavLink, useNavigate } from "react-router-dom";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { signup } from "../../../api/auth";
+import { isAuth } from "../../util/auth";
 
 function RegisterPage() {
   let navigate = useNavigate();
@@ -36,7 +37,6 @@ function RegisterPage() {
   };
 
   const handleSubmit = (e) => {
-    e.preventDefault();
     console.log({ ...formData });
     signup(formData.email, formData.username, formData.password)
       .then((response) => {
@@ -70,7 +70,14 @@ function RegisterPage() {
       console.log(formData);
       // Here you would call your API to register the user
     }
+    e.preventDefault();
   };
+
+  useEffect(() => {
+    if (isAuth()) {
+      navigate("/");
+    }
+  }, [navigate]);
 
   return (
     <Box
@@ -149,18 +156,6 @@ function RegisterPage() {
           error={!!errors.confirmPassword}
           helperText={errors.confirmPassword}
         />
-
-        <FormControlLabel
-          control={
-            <Checkbox
-              checked={agreeTerms}
-              onChange={(e) => setAgreeTerms(e.target.checked)}
-            />
-          }
-          label="Tôi đồng ý với điều khoản trên"
-        />
-        {errors.terms && <FormHelperText error>{errors.terms}</FormHelperText>}
-
         <Button
           type="submit"
           variant="contained"
