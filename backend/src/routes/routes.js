@@ -34,8 +34,12 @@ routes.get("/notes/", auth.authenticateToken, notes.ReadNotes);
 routes.post("/notes/update", auth.authenticateToken, notes.UpdatesNotes); // Uncommented and added auth middleware
 routes.post('/notes/delete', auth.authenticateToken, notes.DeleteNotes); // Uncommented and added auth middleware
 
+// Checklist routes
 routes.get("/notes/checklist", auth.authenticateToken, checklist.GetChecklistNotes);
+routes.post("/checklist/new", auth.authenticateToken, checklist.createChecklistNotes);
 routes.post("/checklist/update-item/:id", auth.authenticateToken, checklist.updateChecklistItem);
+routes.post("/checklist/add-item", auth.authenticateToken, checklist.addChecklistItem);
+routes.delete("/checklist/delete-item/:id", auth.authenticateToken, checklist.deleteChecklistItem);
 
 routes.get("/trash/get", auth.authenticateToken, trash.getTrashItems); 
 routes.post("/trash/delete", auth.authenticateToken, trash.deleteTrashItem);
@@ -49,11 +53,7 @@ routes.get("/collection/get", auth.authenticateToken, collectionController.getNo
 // routes.get('/notes/checklists', auth.authenticateToken, notesController.getChecklistNotes);
 // routes.put('/notes/:id/checklist', auth.authenticateToken, notesController.updateChecklistItems);
 
-// routes.get("/notes/show", notes.ReadNotes );
-// routes.post('/notes/delete',notes.DeleteNotes);
-// routes.post("/notes/update", notes.UpdatesNotes);
-//CRUD checklist
-routes.post("/checklist/new", auth.authenticateToken, checklist.createChecklistNotes)
-// ;
+// Commented out the line causing the error
 // routes.post("User/logout", user.ClearCookie);
-module.exports =routes;
+
+module.exports = routes;

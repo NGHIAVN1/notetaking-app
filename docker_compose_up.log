@@ -1,9 +1,7 @@
- Network mern-notetaking-app_default  Creating
- Network mern-notetaking-app_default  Created
- Container mern-notetaking-app-notetaking-backend-1  Creating
- Container mern-notetaking-app-notetaking-frontend-1  Creating
- Container mern-notetaking-app-notetaking-backend-1  Created
- Container mern-notetaking-app-notetaking-frontend-1  Created
+ Container mern-notetaking-app-notetaking-backend-1  Recreate
+ Container mern-notetaking-app-notetaking-frontend-1  Recreate
+ Container mern-notetaking-app-notetaking-backend-1  Recreated
+ Container mern-notetaking-app-notetaking-frontend-1  Recreated
 Attaching to mern-notetaking-app-notetaking-backend-1, mern-notetaking-app-notetaking-frontend-1
 mern-notetaking-app-notetaking-frontend-1  | /docker-entrypoint.sh: /docker-entrypoint.d/ is not empty, will attempt to perform configuration
 mern-notetaking-app-notetaking-frontend-1  | /docker-entrypoint.sh: Looking for shell scripts in /docker-entrypoint.d/
@@ -14,16 +12,16 @@ mern-notetaking-app-notetaking-frontend-1  | /docker-entrypoint.sh: Sourcing /do
 mern-notetaking-app-notetaking-frontend-1  | /docker-entrypoint.sh: Launching /docker-entrypoint.d/20-envsubst-on-templates.sh
 mern-notetaking-app-notetaking-frontend-1  | /docker-entrypoint.sh: Launching /docker-entrypoint.d/30-tune-worker-processes.sh
 mern-notetaking-app-notetaking-frontend-1  | /docker-entrypoint.sh: Configuration complete; ready for start up
-mern-notetaking-app-notetaking-frontend-1  | 2025/05/14 03:52:40 [notice] 1#1: using the "epoll" event method
-mern-notetaking-app-notetaking-frontend-1  | 2025/05/14 03:52:40 [notice] 1#1: nginx/1.28.0
-mern-notetaking-app-notetaking-frontend-1  | 2025/05/14 03:52:40 [notice] 1#1: built by gcc 14.2.0 (Alpine 14.2.0) 
-mern-notetaking-app-notetaking-frontend-1  | 2025/05/14 03:52:40 [notice] 1#1: OS: Linux 5.15.49-linuxkit-pr
-mern-notetaking-app-notetaking-frontend-1  | 2025/05/14 03:52:40 [notice] 1#1: getrlimit(RLIMIT_NOFILE): 1048576:1048576
-mern-notetaking-app-notetaking-frontend-1  | 2025/05/14 03:52:40 [notice] 1#1: start worker processes
-mern-notetaking-app-notetaking-frontend-1  | 2025/05/14 03:52:40 [notice] 1#1: start worker process 29
-mern-notetaking-app-notetaking-frontend-1  | 2025/05/14 03:52:40 [notice] 1#1: start worker process 30
-mern-notetaking-app-notetaking-frontend-1  | 2025/05/14 03:52:40 [notice] 1#1: start worker process 31
-mern-notetaking-app-notetaking-frontend-1  | 2025/05/14 03:52:40 [notice] 1#1: start worker process 32
+mern-notetaking-app-notetaking-frontend-1  | 2025/05/15 23:13:08 [notice] 1#1: using the "epoll" event method
+mern-notetaking-app-notetaking-frontend-1  | 2025/05/15 23:13:08 [notice] 1#1: nginx/1.28.0
+mern-notetaking-app-notetaking-frontend-1  | 2025/05/15 23:13:08 [notice] 1#1: built by gcc 14.2.0 (Alpine 14.2.0) 
+mern-notetaking-app-notetaking-frontend-1  | 2025/05/15 23:13:08 [notice] 1#1: OS: Linux 5.15.49-linuxkit-pr
+mern-notetaking-app-notetaking-frontend-1  | 2025/05/15 23:13:08 [notice] 1#1: getrlimit(RLIMIT_NOFILE): 1048576:1048576
+mern-notetaking-app-notetaking-frontend-1  | 2025/05/15 23:13:08 [notice] 1#1: start worker processes
+mern-notetaking-app-notetaking-frontend-1  | 2025/05/15 23:13:08 [notice] 1#1: start worker process 30
+mern-notetaking-app-notetaking-frontend-1  | 2025/05/15 23:13:08 [notice] 1#1: start worker process 31
+mern-notetaking-app-notetaking-frontend-1  | 2025/05/15 23:13:08 [notice] 1#1: start worker process 32
+mern-notetaking-app-notetaking-frontend-1  | 2025/05/15 23:13:08 [notice] 1#1: start worker process 33
 mern-notetaking-app-notetaking-backend-1   | 
 mern-notetaking-app-notetaking-backend-1   | > backend@1.0.0 start
 mern-notetaking-app-notetaking-backend-1   | > nodemon app.js
@@ -36,9 +34,90 @@ mern-notetaking-app-notetaking-backend-1   | [33m[nodemon] watching extensions:
 mern-notetaking-app-notetaking-backend-1   | [32m[nodemon] starting `node app.js`[39m
 mern-notetaking-app-notetaking-backend-1   | Server running on port 5000
 mern-notetaking-app-notetaking-backend-1   | Connected to database-app successfully
-mern-notetaking-app-notetaking-frontend-1  | 172.18.0.1 - - [14/May/2025:03:52:54 +0000] "GET / HTTP/1.1" 200 386 "-" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36" "-"
-mern-notetaking-app-notetaking-frontend-1  | 172.18.0.1 - - [14/May/2025:03:52:54 +0000] "GET /assets/index-B3TKlyQK.js HTTP/1.1" 200 555816 "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36" "-"
-mern-notetaking-app-notetaking-frontend-1  | 172.18.0.1 - - [14/May/2025:03:52:54 +0000] "GET /assets/logo-CRVBucE1.png HTTP/1.1" 200 36471 "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36" "-"
+mern-notetaking-app-notetaking-frontend-1  | 172.18.0.1 - - [15/May/2025:23:13:18 +0000] "GET / HTTP/1.1" 200 386 "-" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36" "-"
+mern-notetaking-app-notetaking-frontend-1  | 172.18.0.1 - - [15/May/2025:23:13:18 +0000] "GET /assets/index-CLh0zY2L.js HTTP/1.1" 200 560282 "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36" "-"
+mern-notetaking-app-notetaking-frontend-1  | 172.18.0.1 - - [15/May/2025:23:13:18 +0000] "GET /assets/logo-CRVBucE1.png HTTP/1.1" 200 36471 "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36" "-"
+mern-notetaking-app-notetaking-backend-1   | Token verification error: TokenExpiredError: jwt expired
+mern-notetaking-app-notetaking-backend-1   |     at /app/node_modules/jsonwebtoken/verify.js:190:21
+mern-notetaking-app-notetaking-backend-1   |     at getSecret (/app/node_modules/jsonwebtoken/verify.js:97:14)
+mern-notetaking-app-notetaking-backend-1   |     at module.exports [as verify] (/app/node_modules/jsonwebtoken/verify.js:101:10)
+mern-notetaking-app-notetaking-backend-1   |     at authenticateToken (/app/src/middlewares/auth.js:16:13)
+mern-notetaking-app-notetaking-backend-1   |     at Layer.handle [as handle_request] (/app/node_modules/express/lib/router/layer.js:95:5)
+mern-notetaking-app-notetaking-backend-1   |     at next (/app/node_modules/express/lib/router/route.js:149:13)
+mern-notetaking-app-notetaking-backend-1   |     at Route.dispatch (/app/node_modules/express/lib/router/route.js:119:3)
+mern-notetaking-app-notetaking-backend-1   |     at Layer.handle [as handle_request] (/app/node_modules/express/lib/router/layer.js:95:5)
+mern-notetaking-app-notetaking-backend-1   |     at /app/node_modules/express/lib/router/index.js:284:15
+mern-notetaking-app-notetaking-backend-1   |     at router.process_params (/app/node_modules/express/lib/router/index.js:346:12) {
+mern-notetaking-app-notetaking-backend-1   |   expiredAt: 2025-05-15T19:53:46.000Z
+mern-notetaking-app-notetaking-backend-1   | }
+mern-notetaking-app-notetaking-backend-1   | Token verification error: TokenExpiredError: jwt expired
+mern-notetaking-app-notetaking-backend-1   |     at /app/node_modules/jsonwebtoken/verify.js:190:21
+mern-notetaking-app-notetaking-backend-1   |     at getSecret (/app/node_modules/jsonwebtoken/verify.js:97:14)
+mern-notetaking-app-notetaking-backend-1   |     at module.exports [as verify] (/app/node_modules/jsonwebtoken/verify.js:101:10)
+mern-notetaking-app-notetaking-backend-1   |     at authenticateToken (/app/src/middlewares/auth.js:16:13)
+mern-notetaking-app-notetaking-backend-1   |     at Layer.handle [as handle_request] (/app/node_modules/express/lib/router/layer.js:95:5)
+mern-notetaking-app-notetaking-backend-1   |     at next (/app/node_modules/express/lib/router/route.js:149:13)
+mern-notetaking-app-notetaking-backend-1   |     at Route.dispatch (/app/node_modules/express/lib/router/route.js:119:3)
+mern-notetaking-app-notetaking-backend-1   |     at Layer.handle [as handle_request] (/app/node_modules/express/lib/router/layer.js:95:5)
+mern-notetaking-app-notetaking-backend-1   |     at /app/node_modules/express/lib/router/index.js:284:15
+mern-notetaking-app-notetaking-backend-1   |     at router.process_params (/app/node_modules/express/lib/router/index.js:346:12) {
+mern-notetaking-app-notetaking-backend-1   |   expiredAt: 2025-05-15T19:53:46.000Z
+mern-notetaking-app-notetaking-backend-1   | }
+mern-notetaking-app-notetaking-backend-1   | Token verification error: TokenExpiredError: jwt expired
+mern-notetaking-app-notetaking-backend-1   |     at /app/node_modules/jsonwebtoken/verify.js:190:21
+mern-notetaking-app-notetaking-backend-1   |     at getSecret (/app/node_modules/jsonwebtoken/verify.js:97:14)
+mern-notetaking-app-notetaking-backend-1   |     at module.exports [as verify] (/app/node_modules/jsonwebtoken/verify.js:101:10)
+mern-notetaking-app-notetaking-backend-1   |     at authenticateToken (/app/src/middlewares/auth.js:16:13)
+mern-notetaking-app-notetaking-backend-1   |     at Layer.handle [as handle_request] (/app/node_modules/express/lib/router/layer.js:95:5)
+mern-notetaking-app-notetaking-backend-1   |     at next (/app/node_modules/express/lib/router/route.js:149:13)
+mern-notetaking-app-notetaking-backend-1   |     at Route.dispatch (/app/node_modules/express/lib/router/route.js:119:3)
+mern-notetaking-app-notetaking-backend-1   |     at Layer.handle [as handle_request] (/app/node_modules/express/lib/router/layer.js:95:5)
+mern-notetaking-app-notetaking-backend-1   |     at /app/node_modules/express/lib/router/index.js:284:15
+mern-notetaking-app-notetaking-backend-1   |     at router.process_params (/app/node_modules/express/lib/router/index.js:346:12) {
+mern-notetaking-app-notetaking-backend-1   |   expiredAt: 2025-05-15T19:53:46.000Z
+mern-notetaking-app-notetaking-backend-1   | }
+mern-notetaking-app-notetaking-frontend-1  | 172.18.0.1 - - [15/May/2025:23:13:18 +0000] "GET /login HTTP/1.1" 404 555 "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36" "-"
+mern-notetaking-app-notetaking-frontend-1  | 2025/05/15 23:13:18 [error] 33#33: *2 open() "/usr/share/nginx/html/login" failed (2: No such file or directory), client: 172.18.0.1, server: localhost, request: "GET /login HTTP/1.1", host: "localhost:3000", referrer: "http://localhost:3000/"
+mern-notetaking-app-notetaking-frontend-1  | 172.18.0.1 - - [15/May/2025:23:13:20 +0000] "GET /favicon.ico HTTP/1.1" 404 555 "http://localhost:3000/login" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36" "-"
+mern-notetaking-app-notetaking-frontend-1  | 2025/05/15 23:13:20 [error] 33#33: *2 open() "/usr/share/nginx/html/favicon.ico" failed (2: No such file or directory), client: 172.18.0.1, server: localhost, request: "GET /favicon.ico HTTP/1.1", host: "localhost:3000", referrer: "http://localhost:3000/login"
+mern-notetaking-app-notetaking-frontend-1  | 2025/05/15 23:14:45 [notice] 1#1: signal 3 (SIGQUIT) received, shutting down
+mern-notetaking-app-notetaking-frontend-1  | 2025/05/15 23:14:45 [notice] 33#33: gracefully shutting down
+mern-notetaking-app-notetaking-frontend-1  | 2025/05/15 23:14:45 [notice] 30#30: gracefully shutting down
+mern-notetaking-app-notetaking-frontend-1  | 2025/05/15 23:14:45 [notice] 31#31: gracefully shutting down
+mern-notetaking-app-notetaking-frontend-1  | 2025/05/15 23:14:45 [notice] 33#33: exiting
+mern-notetaking-app-notetaking-frontend-1  | 2025/05/15 23:14:45 [notice] 31#31: exiting
+mern-notetaking-app-notetaking-frontend-1  | 2025/05/15 23:14:45 [notice] 30#30: exiting
+mern-notetaking-app-notetaking-frontend-1  | 2025/05/15 23:14:45 [notice] 33#33: exit
+mern-notetaking-app-notetaking-frontend-1  | 2025/05/15 23:14:45 [notice] 31#31: exit
+mern-notetaking-app-notetaking-frontend-1  | 2025/05/15 23:14:45 [notice] 30#30: exit
+mern-notetaking-app-notetaking-frontend-1  | 2025/05/15 23:14:45 [notice] 32#32: gracefully shutting down
+mern-notetaking-app-notetaking-frontend-1  | 2025/05/15 23:14:45 [notice] 32#32: exiting
+mern-notetaking-app-notetaking-frontend-1  | 2025/05/15 23:14:45 [notice] 32#32: exit
+mern-notetaking-app-notetaking-frontend-1  | 2025/05/15 23:14:45 [notice] 1#1: signal 17 (SIGCHLD) received from 31
+mern-notetaking-app-notetaking-frontend-1  | 2025/05/15 23:14:45 [notice] 1#1: worker process 31 exited with code 0
+mern-notetaking-app-notetaking-frontend-1  | 2025/05/15 23:14:45 [notice] 1#1: worker process 32 exited with code 0
+mern-notetaking-app-notetaking-frontend-1  | 2025/05/15 23:14:45 [notice] 1#1: worker process 33 exited with code 0
+mern-notetaking-app-notetaking-frontend-1  | 2025/05/15 23:14:45 [notice] 1#1: signal 29 (SIGIO) received
+mern-notetaking-app-notetaking-frontend-1  | 2025/05/15 23:14:45 [notice] 1#1: signal 17 (SIGCHLD) received from 32
+mern-notetaking-app-notetaking-frontend-1  | 2025/05/15 23:14:45 [notice] 1#1: signal 17 (SIGCHLD) received from 30
+mern-notetaking-app-notetaking-frontend-1  | 2025/05/15 23:14:45 [notice] 1#1: worker process 30 exited with code 0
+mern-notetaking-app-notetaking-frontend-1  | 2025/05/15 23:14:45 [notice] 1#1: exit
+mern-notetaking-app-notetaking-frontend-1 exited with code 0
+mern-notetaking-app-notetaking-frontend-1 exited with code 0
+mern-notetaking-app-notetaking-frontend-1  | 2025/05/15 23:14:45 [notice] 1#1: using the "epoll" event method
+mern-notetaking-app-notetaking-frontend-1  | 2025/05/15 23:14:45 [notice] 1#1: nginx/1.28.0
+mern-notetaking-app-notetaking-frontend-1  | 2025/05/15 23:14:45 [notice] 1#1: built by gcc 14.2.0 (Alpine 14.2.0) 
+mern-notetaking-app-notetaking-frontend-1  | 2025/05/15 23:14:45 [notice] 1#1: OS: Linux 5.15.49-linuxkit-pr
+mern-notetaking-app-notetaking-frontend-1  | 2025/05/15 23:14:45 [notice] 1#1: getrlimit(RLIMIT_NOFILE): 1048576:1048576
+mern-notetaking-app-notetaking-frontend-1  | 2025/05/15 23:14:45 [notice] 1#1: start worker processes
+mern-notetaking-app-notetaking-frontend-1  | 2025/05/15 23:14:45 [notice] 1#1: start worker process 22
+mern-notetaking-app-notetaking-frontend-1  | 2025/05/15 23:14:45 [notice] 1#1: start worker process 23
+mern-notetaking-app-notetaking-frontend-1  | 2025/05/15 23:14:45 [notice] 1#1: start worker process 24
+mern-notetaking-app-notetaking-frontend-1  | 2025/05/15 23:14:45 [notice] 1#1: start worker process 25
+mern-notetaking-app-notetaking-frontend-1  | 172.18.0.1 - - [15/May/2025:23:14:51 +0000] "GET /login HTTP/1.1" 200 386 "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36" "-"
+mern-notetaking-app-notetaking-frontend-1  | 172.18.0.1 - - [15/May/2025:23:14:51 +0000] "GET /assets/index-CLh0zY2L.js HTTP/1.1" 304 0 "http://localhost:3000/login" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36" "-"
+mern-notetaking-app-notetaking-backend-1   | 682025d81c383456bedb43e1
+mern-notetaking-app-notetaking-frontend-1  | 172.18.0.1 - - [15/May/2025:23:14:57 +0000] "GET /assets/logo-CRVBucE1.png HTTP/1.1" 304 0 "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36" "-"
 mern-notetaking-app-notetaking-backend-1   | Validation successful
 mern-notetaking-app-notetaking-backend-1   | Validation successful
 mern-notetaking-app-notetaking-backend-1   | [
@@ -64,29 +143,818 @@ mern-notetaking-app-notetaking-backend-1   |     created_at: 2025-05-13T09:32:17
 mern-notetaking-app-notetaking-backend-1   |     __v: 0
 mern-notetaking-app-notetaking-backend-1   |   }
 mern-notetaking-app-notetaking-backend-1   | ]
-mern-notetaking-app-notetaking-frontend-1  | 172.18.0.1 - - [14/May/2025:03:52:55 +0000] "GET /1747148174372-free-images.jpg HTTP/1.1" 200 110438 "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36" "-"
-mern-notetaking-app-notetaking-frontend-1  | 172.18.0.1 - - [14/May/2025:03:52:55 +0000] "GET /1747147060016-1747145420372-6399a4d27711a5ad2c9bf5cd_ben-sweet-2LowviVHZ-E-unsplash-1.jpeg HTTP/1.1" 200 28177 "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36" "-"
-mern-notetaking-app-notetaking-frontend-1  | 172.18.0.1 - - [14/May/2025:03:52:55 +0000] "GET /group.png HTTP/1.1" 404 555 "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36" "-"
-mern-notetaking-app-notetaking-frontend-1  | 2025/05/14 03:52:55 [error] 29#29: *4 open() "/usr/share/nginx/html/group.png" failed (2: No such file or directory), client: 172.18.0.1, server: localhost, request: "GET /group.png HTTP/1.1", host: "localhost:3000", referrer: "http://localhost:3000/"
-mern-notetaking-app-notetaking-frontend-1  | 2025/05/14 03:52:55 [error] 29#29: *3 open() "/usr/share/nginx/html/cat.gif" failed (2: No such file or directory), client: 172.18.0.1, server: localhost, request: "GET /cat.gif HTTP/1.1", host: "localhost:3000", referrer: "http://localhost:3000/"
-mern-notetaking-app-notetaking-frontend-1  | 172.18.0.1 - - [14/May/2025:03:52:55 +0000] "GET /cat.gif HTTP/1.1" 404 555 "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36" "-"
+mern-notetaking-app-notetaking-backend-1   | Validation successful
+mern-notetaking-app-notetaking-frontend-1  | 172.18.0.1 - - [15/May/2025:23:14:58 +0000] "GET /cat.gif HTTP/1.1" 200 386 "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36" "-"
+mern-notetaking-app-notetaking-frontend-1  | 172.18.0.1 - - [15/May/2025:23:14:58 +0000] "GET /group.png HTTP/1.1" 200 386 "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36" "-"
+mern-notetaking-app-notetaking-frontend-1  | 172.18.0.1 - - [15/May/2025:23:14:58 +0000] "GET /1747303928694-1747144961292-6399a4d27711a5ad2c9bf5cd_ben-sweet-2LowviVHZ-E-unsplash-1.jpeg HTTP/1.1" 200 28177 "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36" "-"
+mern-notetaking-app-notetaking-frontend-1  | 172.18.0.1 - - [15/May/2025:23:14:58 +0000] "GET /1747148174372-free-images.jpg HTTP/1.1" 200 110438 "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36" "-"
+mern-notetaking-app-notetaking-backend-1   | Validation successful
+mern-notetaking-app-notetaking-backend-1   | www[object Object]
+mern-notetaking-app-notetaking-backend-1   | Validation successful
+mern-notetaking-app-notetaking-frontend-1  | 172.18.0.1 - - [15/May/2025:23:15:15 +0000] "GET /cat.gif HTTP/1.1" 304 0 "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36" "-"
+mern-notetaking-app-notetaking-frontend-1  | 172.18.0.1 - - [15/May/2025:23:15:15 +0000] "GET /1747350914653-1747144961292-6399a4d27711a5ad2c9bf5cd_ben-sweet-2LowviVHZ-E-unsplash-1.jpeg HTTP/1.1" 200 386 "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36" "-"
+mern-notetaking-app-notetaking-frontend-1  | 172.18.0.1 - - [15/May/2025:23:15:15 +0000] "GET /group.png HTTP/1.1" 304 0 "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36" "-"
 mern-notetaking-app-notetaking-backend-1   | Validation successful
 mern-notetaking-app-notetaking-backend-1   | Validation successful
 mern-notetaking-app-notetaking-backend-1   | Validation successful
-mern-notetaking-app-notetaking-frontend-1  | 2025/05/14 03:53:09 [error] 32#32: *2 open() "/usr/share/nginx/html/1747144961292-6399a4d27711a5ad2c9bf5cd_ben-sweet-2LowviVHZ-E-unsplash-1.jpeg" failed (2: No such file or directory), client: 172.18.0.1, server: localhost, request: "GET /1747144961292-6399a4d27711a5ad2c9bf5cd_ben-sweet-2LowviVHZ-E-unsplash-1.jpeg HTTP/1.1", host: "localhost:3000", referrer: "http://localhost:3000/trash"
-mern-notetaking-app-notetaking-frontend-1  | 2025/05/14 03:53:09 [error] 29#29: *3 open() "/usr/share/nginx/html/1747145420372-6399a4d27711a5ad2c9bf5cd_ben-sweet-2LowviVHZ-E-unsplash-1.jpeg" failed (2: No such file or directory), client: 172.18.0.1, server: localhost, request: "GET /1747145420372-6399a4d27711a5ad2c9bf5cd_ben-sweet-2LowviVHZ-E-unsplash-1.jpeg HTTP/1.1", host: "localhost:3000", referrer: "http://localhost:3000/trash"
-mern-notetaking-app-notetaking-frontend-1  | 172.18.0.1 - - [14/May/2025:03:53:09 +0000] "GET /1747144961292-6399a4d27711a5ad2c9bf5cd_ben-sweet-2LowviVHZ-E-unsplash-1.jpeg HTTP/1.1" 404 555 "http://localhost:3000/trash" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36" "-"
-mern-notetaking-app-notetaking-frontend-1  | 172.18.0.1 - - [14/May/2025:03:53:09 +0000] "GET /1747145420372-6399a4d27711a5ad2c9bf5cd_ben-sweet-2LowviVHZ-E-unsplash-1.jpeg HTTP/1.1" 404 555 "http://localhost:3000/trash" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36" "-"
+mern-notetaking-app-notetaking-frontend-1  | 172.18.0.1 - - [15/May/2025:23:15:26 +0000] "GET /1747304269129-free-images.jpg HTTP/1.1" 200 386 "http://localhost:3000/trash" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36" "-"
+mern-notetaking-app-notetaking-frontend-1  | 172.18.0.1 - - [15/May/2025:23:15:26 +0000] "GET /1747147060016-1747145420372-6399a4d27711a5ad2c9bf5cd_ben-sweet-2LowviVHZ-E-unsplash-1.jpeg HTTP/1.1" 200 28177 "http://localhost:3000/trash" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36" "-"
 mern-notetaking-app-notetaking-backend-1   | Validation successful
-mern-notetaking-app-notetaking-frontend-1  | 2025/05/14 03:53:12 [error] 29#29: *3 open() "/usr/share/nginx/html/group.png" failed (2: No such file or directory), client: 172.18.0.1, server: localhost, request: "GET /group.png HTTP/1.1", host: "localhost:3000", referrer: "http://localhost:3000/"
-mern-notetaking-app-notetaking-frontend-1  | 172.18.0.1 - - [14/May/2025:03:53:12 +0000] "GET /group.png HTTP/1.1" 404 555 "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36" "-"
-mern-notetaking-app-notetaking-frontend-1  | 172.18.0.1 - - [14/May/2025:03:53:12 +0000] "GET /1747148174372-free-images.jpg HTTP/1.1" 304 0 "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36" "-"
-mern-notetaking-app-notetaking-frontend-1  | 172.18.0.1 - - [14/May/2025:03:53:12 +0000] "GET /1747147060016-1747145420372-6399a4d27711a5ad2c9bf5cd_ben-sweet-2LowviVHZ-E-unsplash-1.jpeg HTTP/1.1" 304 0 "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36" "-"
-mern-notetaking-app-notetaking-frontend-1  | 2025/05/14 03:53:12 [error] 32#32: *2 open() "/usr/share/nginx/html/cat.gif" failed (2: No such file or directory), client: 172.18.0.1, server: localhost, request: "GET /cat.gif HTTP/1.1", host: "localhost:3000", referrer: "http://localhost:3000/"
-mern-notetaking-app-notetaking-frontend-1  | 172.18.0.1 - - [14/May/2025:03:53:12 +0000] "GET /cat.gif HTTP/1.1" 404 555 "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36" "-"
+mern-notetaking-app-notetaking-frontend-1  | 172.18.0.1 - - [15/May/2025:23:15:29 +0000] "GET /group.png HTTP/1.1" 304 0 "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36" "-"
+mern-notetaking-app-notetaking-frontend-1  | 172.18.0.1 - - [15/May/2025:23:15:29 +0000] "GET /cat.gif HTTP/1.1" 304 0 "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36" "-"
+mern-notetaking-app-notetaking-backend-1   | Validation successful
+mern-notetaking-app-notetaking-backend-1   | Updating checklist item: 682600a1bcaab9bba521713c with data: { is_checked: false }
+mern-notetaking-app-notetaking-backend-1   | Updated item: {
+mern-notetaking-app-notetaking-backend-1   |   _id: new ObjectId('682600a1bcaab9bba521713c'),
+mern-notetaking-app-notetaking-backend-1   |   content: 'adsfdsafdasf',
+mern-notetaking-app-notetaking-backend-1   |   is_checked: false,
+mern-notetaking-app-notetaking-backend-1   |   __v: 0
+mern-notetaking-app-notetaking-backend-1   | }
+mern-notetaking-app-notetaking-frontend-1  | 172.18.0.1 - - [15/May/2025:23:15:36 +0000] "GET / HTTP/1.1" 304 0 "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36" "-"
+mern-notetaking-app-notetaking-frontend-1  | 172.18.0.1 - - [15/May/2025:23:15:36 +0000] "GET /assets/index-CLh0zY2L.js HTTP/1.1" 304 0 "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36" "-"
+mern-notetaking-app-notetaking-frontend-1  | 172.18.0.1 - - [15/May/2025:23:15:36 +0000] "GET /assets/logo-CRVBucE1.png HTTP/1.1" 304 0 "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36" "-"
+mern-notetaking-app-notetaking-frontend-1  | 172.18.0.1 - - [15/May/2025:23:15:36 +0000] "GET /logo.png HTTP/1.1" 200 36471 "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36" "-"
 mern-notetaking-app-notetaking-backend-1   | Validation successful
 mern-notetaking-app-notetaking-backend-1   | Validation successful
-mern-notetaking-app-notetaking-frontend-1  | 2025/05/14 03:53:35 [error] 29#29: *3 open() "/usr/share/nginx/html/1747145420372-6399a4d27711a5ad2c9bf5cd_ben-sweet-2LowviVHZ-E-unsplash-1.jpeg" failed (2: No such file or directory), client: 172.18.0.1, server: localhost, request: "GET /1747145420372-6399a4d27711a5ad2c9bf5cd_ben-sweet-2LowviVHZ-E-unsplash-1.jpeg HTTP/1.1", host: "localhost:3000", referrer: "http://localhost:3000/trash"
-mern-notetaking-app-notetaking-frontend-1  | 2025/05/14 03:53:35 [error] 32#32: *2 open() "/usr/share/nginx/html/1747144961292-6399a4d27711a5ad2c9bf5cd_ben-sweet-2LowviVHZ-E-unsplash-1.jpeg" failed (2: No such file or directory), client: 172.18.0.1, server: localhost, request: "GET /1747144961292-6399a4d27711a5ad2c9bf5cd_ben-sweet-2LowviVHZ-E-unsplash-1.jpeg HTTP/1.1", host: "localhost:3000", referrer: "http://localhost:3000/trash"
-mern-notetaking-app-notetaking-frontend-1  | 172.18.0.1 - - [14/May/2025:03:53:35 +0000] "GET /1747145420372-6399a4d27711a5ad2c9bf5cd_ben-sweet-2LowviVHZ-E-unsplash-1.jpeg HTTP/1.1" 404 555 "http://localhost:3000/trash" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36" "-"
-mern-notetaking-app-notetaking-frontend-1  | 172.18.0.1 - - [14/May/2025:03:53:35 +0000] "GET /1747144961292-6399a4d27711a5ad2c9bf5cd_ben-sweet-2LowviVHZ-E-unsplash-1.jpeg HTTP/1.1" 404 555 "http://localhost:3000/trash" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36" "-"
+mern-notetaking-app-notetaking-backend-1   | [
+mern-notetaking-app-notetaking-backend-1   |   {
+mern-notetaking-app-notetaking-backend-1   |     _id: new ObjectId('6820bbcd27bcec8b5a689de8'),
+mern-notetaking-app-notetaking-backend-1   |     user_id: new ObjectId('682025d81c383456bedb43e1'),
+mern-notetaking-app-notetaking-backend-1   |     label_name: 'Homework',
+mern-notetaking-app-notetaking-backend-1   |     created_at: 2025-05-11T15:01:33.033Z,
+mern-notetaking-app-notetaking-backend-1   |     __v: 0
+mern-notetaking-app-notetaking-backend-1   |   },
+mern-notetaking-app-notetaking-backend-1   |   {
+mern-notetaking-app-notetaking-backend-1   |     _id: new ObjectId('6822c2b36642dd20590fdae2'),
+mern-notetaking-app-notetaking-backend-1   |     user_id: new ObjectId('682025d81c383456bedb43e1'),
+mern-notetaking-app-notetaking-backend-1   |     label_name: 'Programming',
+mern-notetaking-app-notetaking-backend-1   |     created_at: 2025-05-13T03:55:31.423Z,
+mern-notetaking-app-notetaking-backend-1   |     __v: 0
+mern-notetaking-app-notetaking-backend-1   |   },
+mern-notetaking-app-notetaking-backend-1   |   {
+mern-notetaking-app-notetaking-backend-1   |     _id: new ObjectId('682311a185da04dee381e026'),
+mern-notetaking-app-notetaking-backend-1   |     user_id: new ObjectId('682025d81c383456bedb43e1'),
+mern-notetaking-app-notetaking-backend-1   |     label_name: 'Math',
+mern-notetaking-app-notetaking-backend-1   |     created_at: 2025-05-13T09:32:17.919Z,
+mern-notetaking-app-notetaking-backend-1   |     __v: 0
+mern-notetaking-app-notetaking-backend-1   |   }
+mern-notetaking-app-notetaking-backend-1   | ]
+mern-notetaking-app-notetaking-frontend-1  | 172.18.0.1 - - [15/May/2025:23:15:37 +0000] "GET /1747303928694-1747144961292-6399a4d27711a5ad2c9bf5cd_ben-sweet-2LowviVHZ-E-unsplash-1.jpeg HTTP/1.1" 304 0 "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36" "-"
+mern-notetaking-app-notetaking-frontend-1  | 172.18.0.1 - - [15/May/2025:23:15:37 +0000] "GET /1747148174372-free-images.jpg HTTP/1.1" 304 0 "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36" "-"
+mern-notetaking-app-notetaking-backend-1   | Validation successful
+mern-notetaking-app-notetaking-backend-1   | Validation successful
+mern-notetaking-app-notetaking-backend-1   | Validation successful
+mern-notetaking-app-notetaking-frontend-1  | 172.18.0.1 - - [15/May/2025:23:15:51 +0000] "GET /cat.gif HTTP/1.1" 304 0 "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36" "-"
+mern-notetaking-app-notetaking-frontend-1  | 172.18.0.1 - - [15/May/2025:23:15:51 +0000] "GET /group.png HTTP/1.1" 304 0 "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36" "-"
+mern-notetaking-app-notetaking-backend-1   | Validation successful
+mern-notetaking-app-notetaking-backend-1   | Updating checklist item: 682675a66dfe72b956cdd38e with data: { is_checked: true }
+mern-notetaking-app-notetaking-backend-1   | Updated item: {
+mern-notetaking-app-notetaking-backend-1   |   _id: new ObjectId('682675a66dfe72b956cdd38e'),
+mern-notetaking-app-notetaking-backend-1   |   content: 'abcdseeeee',
+mern-notetaking-app-notetaking-backend-1   |   is_checked: true,
+mern-notetaking-app-notetaking-backend-1   |   __v: 0
+mern-notetaking-app-notetaking-backend-1   | }
+mern-notetaking-app-notetaking-backend-1   | Validation successful
+mern-notetaking-app-notetaking-backend-1   | wwwundefined
+mern-notetaking-app-notetaking-backend-1   | Validation successful
+mern-notetaking-app-notetaking-frontend-1  | 172.18.0.1 - - [15/May/2025:23:16:09 +0000] "GET /cat.gif HTTP/1.1" 304 0 "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36" "-"
+mern-notetaking-app-notetaking-frontend-1  | 172.18.0.1 - - [15/May/2025:23:16:09 +0000] "GET /1747148174372-free-images.jpg HTTP/1.1" 304 0 "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36" "-"
+mern-notetaking-app-notetaking-frontend-1  | 172.18.0.1 - - [15/May/2025:23:16:09 +0000] "GET /1747303928694-1747144961292-6399a4d27711a5ad2c9bf5cd_ben-sweet-2LowviVHZ-E-unsplash-1.jpeg HTTP/1.1" 304 0 "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36" "-"
+mern-notetaking-app-notetaking-frontend-1  | 172.18.0.1 - - [15/May/2025:23:16:09 +0000] "GET /group.png HTTP/1.1" 304 0 "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36" "-"
+mern-notetaking-app-notetaking-backend-1   | Validation successful
+mern-notetaking-app-notetaking-backend-1   | Validation successful
+mern-notetaking-app-notetaking-backend-1   | Validation successful
+mern-notetaking-app-notetaking-backend-1   | Validation successful
+mern-notetaking-app-notetaking-backend-1   | [
+mern-notetaking-app-notetaking-backend-1   |   {
+mern-notetaking-app-notetaking-backend-1   |     _id: new ObjectId('6820bbcd27bcec8b5a689de8'),
+mern-notetaking-app-notetaking-backend-1   |     user_id: new ObjectId('682025d81c383456bedb43e1'),
+mern-notetaking-app-notetaking-backend-1   |     label_name: 'Homework',
+mern-notetaking-app-notetaking-backend-1   |     created_at: 2025-05-11T15:01:33.033Z,
+mern-notetaking-app-notetaking-backend-1   |     __v: 0
+mern-notetaking-app-notetaking-backend-1   |   },
+mern-notetaking-app-notetaking-backend-1   |   {
+mern-notetaking-app-notetaking-backend-1   |     _id: new ObjectId('6822c2b36642dd20590fdae2'),
+mern-notetaking-app-notetaking-backend-1   |     user_id: new ObjectId('682025d81c383456bedb43e1'),
+mern-notetaking-app-notetaking-backend-1   |     label_name: 'Programming',
+mern-notetaking-app-notetaking-backend-1   |     created_at: 2025-05-13T03:55:31.423Z,
+mern-notetaking-app-notetaking-backend-1   |     __v: 0
+mern-notetaking-app-notetaking-backend-1   |   },
+mern-notetaking-app-notetaking-backend-1   |   {
+mern-notetaking-app-notetaking-backend-1   |     _id: new ObjectId('682311a185da04dee381e026'),
+mern-notetaking-app-notetaking-backend-1   |     user_id: new ObjectId('682025d81c383456bedb43e1'),
+mern-notetaking-app-notetaking-backend-1   |     label_name: 'Math',
+mern-notetaking-app-notetaking-backend-1   |     created_at: 2025-05-13T09:32:17.919Z,
+mern-notetaking-app-notetaking-backend-1   |     __v: 0
+mern-notetaking-app-notetaking-backend-1   |   }
+mern-notetaking-app-notetaking-backend-1   | ]
+mern-notetaking-app-notetaking-backend-1   | Validation successful
+mern-notetaking-app-notetaking-frontend-1  | 172.18.0.1 - - [15/May/2025:23:17:16 +0000] "GET /group.png HTTP/1.1" 304 0 "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36" "-"
+mern-notetaking-app-notetaking-frontend-1  | 172.18.0.1 - - [15/May/2025:23:17:16 +0000] "GET /cat.gif HTTP/1.1" 304 0 "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36" "-"
+mern-notetaking-app-notetaking-backend-1   | Validation successful
+mern-notetaking-app-notetaking-frontend-1  | 172.18.0.1 - - [15/May/2025:23:17:54 +0000] "GET /group.png HTTP/1.1" 304 0 "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36" "-"
+mern-notetaking-app-notetaking-frontend-1  | 172.18.0.1 - - [15/May/2025:23:17:54 +0000] "GET /cat.gif HTTP/1.1" 304 0 "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36" "-"
+mern-notetaking-app-notetaking-frontend-1  | 172.18.0.1 - - [15/May/2025:23:17:54 +0000] "GET /1747148174372-free-images.jpg HTTP/1.1" 304 0 "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36" "-"
+mern-notetaking-app-notetaking-frontend-1  | 172.18.0.1 - - [15/May/2025:23:17:54 +0000] "GET /1747303928694-1747144961292-6399a4d27711a5ad2c9bf5cd_ben-sweet-2LowviVHZ-E-unsplash-1.jpeg HTTP/1.1" 304 0 "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36" "-"
+mern-notetaking-app-notetaking-backend-1   | Validation successful
+mern-notetaking-app-notetaking-backend-1   | Updating checklist item: 68255d985ed4582621ac0ddb with data: { is_checked: true }
+mern-notetaking-app-notetaking-backend-1   | Updated item: {
+mern-notetaking-app-notetaking-backend-1   |   _id: new ObjectId('68255d985ed4582621ac0ddb'),
+mern-notetaking-app-notetaking-backend-1   |   content: 'lam bai tap 2',
+mern-notetaking-app-notetaking-backend-1   |   is_checked: true,
+mern-notetaking-app-notetaking-backend-1   |   __v: 0
+mern-notetaking-app-notetaking-backend-1   | }
+mern-notetaking-app-notetaking-frontend-1  | 172.18.0.1 - - [15/May/2025:23:18:19 +0000] "GET / HTTP/1.1" 304 0 "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36" "-"
+mern-notetaking-app-notetaking-frontend-1  | 172.18.0.1 - - [15/May/2025:23:18:19 +0000] "GET /assets/index-CLh0zY2L.js HTTP/1.1" 304 0 "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36" "-"
+mern-notetaking-app-notetaking-frontend-1  | 172.18.0.1 - - [15/May/2025:23:18:19 +0000] "GET /assets/logo-CRVBucE1.png HTTP/1.1" 304 0 "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36" "-"
+mern-notetaking-app-notetaking-frontend-1  | 172.18.0.1 - - [15/May/2025:23:18:19 +0000] "GET /logo.png HTTP/1.1" 304 0 "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36" "-"
+mern-notetaking-app-notetaking-backend-1   | Validation successful
+mern-notetaking-app-notetaking-backend-1   | Validation successful
+mern-notetaking-app-notetaking-backend-1   | Validation successful
+mern-notetaking-app-notetaking-backend-1   | [
+mern-notetaking-app-notetaking-backend-1   |   {
+mern-notetaking-app-notetaking-backend-1   |     _id: new ObjectId('6820bbcd27bcec8b5a689de8'),
+mern-notetaking-app-notetaking-backend-1   |     user_id: new ObjectId('682025d81c383456bedb43e1'),
+mern-notetaking-app-notetaking-backend-1   |     label_name: 'Homework',
+mern-notetaking-app-notetaking-backend-1   |     created_at: 2025-05-11T15:01:33.033Z,
+mern-notetaking-app-notetaking-backend-1   |     __v: 0
+mern-notetaking-app-notetaking-backend-1   |   },
+mern-notetaking-app-notetaking-backend-1   |   {
+mern-notetaking-app-notetaking-backend-1   |     _id: new ObjectId('6822c2b36642dd20590fdae2'),
+mern-notetaking-app-notetaking-backend-1   |     user_id: new ObjectId('682025d81c383456bedb43e1'),
+mern-notetaking-app-notetaking-backend-1   |     label_name: 'Programming',
+mern-notetaking-app-notetaking-backend-1   |     created_at: 2025-05-13T03:55:31.423Z,
+mern-notetaking-app-notetaking-backend-1   |     __v: 0
+mern-notetaking-app-notetaking-backend-1   |   },
+mern-notetaking-app-notetaking-backend-1   |   {
+mern-notetaking-app-notetaking-backend-1   |     _id: new ObjectId('682311a185da04dee381e026'),
+mern-notetaking-app-notetaking-backend-1   |     user_id: new ObjectId('682025d81c383456bedb43e1'),
+mern-notetaking-app-notetaking-backend-1   |     label_name: 'Math',
+mern-notetaking-app-notetaking-backend-1   |     created_at: 2025-05-13T09:32:17.919Z,
+mern-notetaking-app-notetaking-backend-1   |     __v: 0
+mern-notetaking-app-notetaking-backend-1   |   }
+mern-notetaking-app-notetaking-backend-1   | ]
+mern-notetaking-app-notetaking-frontend-1  | 172.18.0.1 - - [15/May/2025:23:57:31 +0000] "GET / HTTP/1.1" 304 0 "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36" "-"
+mern-notetaking-app-notetaking-frontend-1  | 172.18.0.1 - - [15/May/2025:23:57:31 +0000] "GET /assets/index-CLh0zY2L.js HTTP/1.1" 304 0 "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36" "-"
+mern-notetaking-app-notetaking-frontend-1  | 172.18.0.1 - - [15/May/2025:23:57:31 +0000] "GET /assets/logo-CRVBucE1.png HTTP/1.1" 304 0 "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36" "-"
+mern-notetaking-app-notetaking-frontend-1  | 172.18.0.1 - - [15/May/2025:23:57:31 +0000] "GET /logo.png HTTP/1.1" 304 0 "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36" "-"
+mern-notetaking-app-notetaking-backend-1   | Validation successful
+mern-notetaking-app-notetaking-backend-1   | Validation successful
+mern-notetaking-app-notetaking-backend-1   | [
+mern-notetaking-app-notetaking-backend-1   |   {
+mern-notetaking-app-notetaking-backend-1   |     _id: new ObjectId('6820bbcd27bcec8b5a689de8'),
+mern-notetaking-app-notetaking-backend-1   |     user_id: new ObjectId('682025d81c383456bedb43e1'),
+mern-notetaking-app-notetaking-backend-1   |     label_name: 'Homework',
+mern-notetaking-app-notetaking-backend-1   |     created_at: 2025-05-11T15:01:33.033Z,
+mern-notetaking-app-notetaking-backend-1   |     __v: 0
+mern-notetaking-app-notetaking-backend-1   |   },
+mern-notetaking-app-notetaking-backend-1   |   {
+mern-notetaking-app-notetaking-backend-1   |     _id: new ObjectId('6822c2b36642dd20590fdae2'),
+mern-notetaking-app-notetaking-backend-1   |     user_id: new ObjectId('682025d81c383456bedb43e1'),
+mern-notetaking-app-notetaking-backend-1   |     label_name: 'Programming',
+mern-notetaking-app-notetaking-backend-1   |     created_at: 2025-05-13T03:55:31.423Z,
+mern-notetaking-app-notetaking-backend-1   |     __v: 0
+mern-notetaking-app-notetaking-backend-1   |   },
+mern-notetaking-app-notetaking-backend-1   |   {
+mern-notetaking-app-notetaking-backend-1   |     _id: new ObjectId('682311a185da04dee381e026'),
+mern-notetaking-app-notetaking-backend-1   |     user_id: new ObjectId('682025d81c383456bedb43e1'),
+mern-notetaking-app-notetaking-backend-1   |     label_name: 'Math',
+mern-notetaking-app-notetaking-backend-1   |     created_at: 2025-05-13T09:32:17.919Z,
+mern-notetaking-app-notetaking-backend-1   |     __v: 0
+mern-notetaking-app-notetaking-backend-1   |   }
+mern-notetaking-app-notetaking-backend-1   | ]
+mern-notetaking-app-notetaking-frontend-1  | 172.18.0.1 - - [15/May/2025:23:57:32 +0000] "GET /1747303928694-1747144961292-6399a4d27711a5ad2c9bf5cd_ben-sweet-2LowviVHZ-E-unsplash-1.jpeg HTTP/1.1" 304 0 "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36" "-"
+mern-notetaking-app-notetaking-frontend-1  | 172.18.0.1 - - [15/May/2025:23:57:32 +0000] "GET /1747148174372-free-images.jpg HTTP/1.1" 304 0 "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36" "-"
+mern-notetaking-app-notetaking-frontend-1  | 172.18.0.1 - - [15/May/2025:23:57:32 +0000] "GET /group.png HTTP/1.1" 304 0 "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36" "-"
+mern-notetaking-app-notetaking-frontend-1  | 172.18.0.1 - - [15/May/2025:23:57:32 +0000] "GET /cat.gif HTTP/1.1" 304 0 "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36" "-"
+mern-notetaking-app-notetaking-backend-1   | Validation successful
+mern-notetaking-app-notetaking-frontend-1  | 172.18.0.1 - - [16/May/2025:00:54:57 +0000] "GET / HTTP/1.1" 304 0 "-" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36" "-"
+mern-notetaking-app-notetaking-frontend-1  | 172.18.0.1 - - [16/May/2025:00:54:57 +0000] "GET /assets/index-CLh0zY2L.js HTTP/1.1" 304 0 "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36" "-"
+mern-notetaking-app-notetaking-frontend-1  | 172.18.0.1 - - [16/May/2025:00:54:57 +0000] "GET /assets/logo-CRVBucE1.png HTTP/1.1" 304 0 "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36" "-"
+mern-notetaking-app-notetaking-backend-1   | Database error: MongoServerSelectionError: getaddrinfo ENOTFOUND c.database-app.mongocluster.cosmos.azure.com
+mern-notetaking-app-notetaking-backend-1   |     at AbortSignal.<anonymous> (/app/node_modules/mongodb/lib/sdam/topology.js:289:34)
+mern-notetaking-app-notetaking-backend-1   |     at [nodejs.internal.kHybridDispatch] (node:internal/event_target:827:20)
+mern-notetaking-app-notetaking-backend-1   |     at AbortSignal.dispatchEvent (node:internal/event_target:762:26)
+mern-notetaking-app-notetaking-backend-1   |     at runAbort (node:internal/abort_controller:488:10)
+mern-notetaking-app-notetaking-backend-1   |     at abortSignal (node:internal/abort_controller:459:3)
+mern-notetaking-app-notetaking-backend-1   |     at TimeoutController.abort (node:internal/abort_controller:507:5)
+mern-notetaking-app-notetaking-backend-1   |     at Timeout.<anonymous> (/app/node_modules/mongodb/lib/utils.js:976:92)
+mern-notetaking-app-notetaking-backend-1   |     at listOnTimeout (node:internal/timers:608:17)
+mern-notetaking-app-notetaking-backend-1   |     at process.processTimers (node:internal/timers:543:7) {
+mern-notetaking-app-notetaking-backend-1   |   reason: TopologyDescription {
+mern-notetaking-app-notetaking-backend-1   |     type: 'Sharded',
+mern-notetaking-app-notetaking-backend-1   |     servers: Map(1) {
+mern-notetaking-app-notetaking-backend-1   |       'c.database-app.mongocluster.cosmos.azure.com:10260' => [ServerDescription]
+mern-notetaking-app-notetaking-backend-1   |     },
+mern-notetaking-app-notetaking-backend-1   |     stale: false,
+mern-notetaking-app-notetaking-backend-1   |     compatible: true,
+mern-notetaking-app-notetaking-backend-1   |     heartbeatFrequencyMS: 10000,
+mern-notetaking-app-notetaking-backend-1   |     localThresholdMS: 15,
+mern-notetaking-app-notetaking-backend-1   |     setName: null,
+mern-notetaking-app-notetaking-backend-1   |     maxElectionId: null,
+mern-notetaking-app-notetaking-backend-1   |     maxSetVersion: null,
+mern-notetaking-app-notetaking-backend-1   |     commonWireVersion: 0,
+mern-notetaking-app-notetaking-backend-1   |     logicalSessionTimeoutMinutes: null
+mern-notetaking-app-notetaking-backend-1   |   },
+mern-notetaking-app-notetaking-backend-1   |   code: undefined,
+mern-notetaking-app-notetaking-backend-1   |   Symbol(errorLabels): Set(0) {},
+mern-notetaking-app-notetaking-backend-1   |   [cause]: MongoNetworkError: getaddrinfo ENOTFOUND c.database-app.mongocluster.cosmos.azure.com
+mern-notetaking-app-notetaking-backend-1   |       at connectionFailureError (/app/node_modules/mongodb/lib/cmap/connect.js:353:20)
+mern-notetaking-app-notetaking-backend-1   |       at TLSSocket.<anonymous> (/app/node_modules/mongodb/lib/cmap/connect.js:268:44)
+mern-notetaking-app-notetaking-backend-1   |       at Object.onceWrapper (node:events:622:26)
+mern-notetaking-app-notetaking-backend-1   |       at TLSSocket.emit (node:events:507:28)
+mern-notetaking-app-notetaking-backend-1   |       at emitErrorNT (node:internal/streams/destroy:170:8)
+mern-notetaking-app-notetaking-backend-1   |       at emitErrorCloseNT (node:internal/streams/destroy:129:3)
+mern-notetaking-app-notetaking-backend-1   |       at process.processTicksAndRejections (node:internal/process/task_queues:90:21) {
+mern-notetaking-app-notetaking-backend-1   |     Symbol(errorLabels): Set(1) { 'ResetPool' },
+mern-notetaking-app-notetaking-backend-1   |     [cause]: Error: getaddrinfo ENOTFOUND c.database-app.mongocluster.cosmos.azure.com
+mern-notetaking-app-notetaking-backend-1   |         at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26) {
+mern-notetaking-app-notetaking-backend-1   |       errno: -3008,
+mern-notetaking-app-notetaking-backend-1   |       code: 'ENOTFOUND',
+mern-notetaking-app-notetaking-backend-1   |       syscall: 'getaddrinfo',
+mern-notetaking-app-notetaking-backend-1   |       hostname: 'c.database-app.mongocluster.cosmos.azure.com'
+mern-notetaking-app-notetaking-backend-1   |     }
+mern-notetaking-app-notetaking-backend-1   |   }
+mern-notetaking-app-notetaking-backend-1   | }
+mern-notetaking-app-notetaking-backend-1   | Database error: MongoServerSelectionError: getaddrinfo ENOTFOUND c.database-app.mongocluster.cosmos.azure.com
+mern-notetaking-app-notetaking-backend-1   |     at AbortSignal.<anonymous> (/app/node_modules/mongodb/lib/sdam/topology.js:289:34)
+mern-notetaking-app-notetaking-backend-1   |     at [nodejs.internal.kHybridDispatch] (node:internal/event_target:827:20)
+mern-notetaking-app-notetaking-backend-1   |     at AbortSignal.dispatchEvent (node:internal/event_target:762:26)
+mern-notetaking-app-notetaking-backend-1   |     at runAbort (node:internal/abort_controller:488:10)
+mern-notetaking-app-notetaking-backend-1   |     at abortSignal (node:internal/abort_controller:459:3)
+mern-notetaking-app-notetaking-backend-1   |     at TimeoutController.abort (node:internal/abort_controller:507:5)
+mern-notetaking-app-notetaking-backend-1   |     at Timeout.<anonymous> (/app/node_modules/mongodb/lib/utils.js:976:92)
+mern-notetaking-app-notetaking-backend-1   |     at listOnTimeout (node:internal/timers:608:17)
+mern-notetaking-app-notetaking-backend-1   |     at process.processTimers (node:internal/timers:543:7) {
+mern-notetaking-app-notetaking-backend-1   |   reason: TopologyDescription {
+mern-notetaking-app-notetaking-backend-1   |     type: 'Sharded',
+mern-notetaking-app-notetaking-backend-1   |     servers: Map(1) {
+mern-notetaking-app-notetaking-backend-1   |       'c.database-app.mongocluster.cosmos.azure.com:10260' => [ServerDescription]
+mern-notetaking-app-notetaking-backend-1   |     },
+mern-notetaking-app-notetaking-backend-1   |     stale: false,
+mern-notetaking-app-notetaking-backend-1   |     compatible: true,
+mern-notetaking-app-notetaking-backend-1   |     heartbeatFrequencyMS: 10000,
+mern-notetaking-app-notetaking-backend-1   |     localThresholdMS: 15,
+mern-notetaking-app-notetaking-backend-1   |     setName: null,
+mern-notetaking-app-notetaking-backend-1   |     maxElectionId: null,
+mern-notetaking-app-notetaking-backend-1   |     maxSetVersion: null,
+mern-notetaking-app-notetaking-backend-1   |     commonWireVersion: 0,
+mern-notetaking-app-notetaking-backend-1   |     logicalSessionTimeoutMinutes: null
+mern-notetaking-app-notetaking-backend-1   |   },
+mern-notetaking-app-notetaking-backend-1   |   code: undefined,
+mern-notetaking-app-notetaking-backend-1   |   Symbol(errorLabels): Set(0) {},
+mern-notetaking-app-notetaking-backend-1   |   [cause]: MongoNetworkError: getaddrinfo ENOTFOUND c.database-app.mongocluster.cosmos.azure.com
+mern-notetaking-app-notetaking-backend-1   |       at connectionFailureError (/app/node_modules/mongodb/lib/cmap/connect.js:353:20)
+mern-notetaking-app-notetaking-backend-1   |       at TLSSocket.<anonymous> (/app/node_modules/mongodb/lib/cmap/connect.js:268:44)
+mern-notetaking-app-notetaking-backend-1   |       at Object.onceWrapper (node:events:622:26)
+mern-notetaking-app-notetaking-backend-1   |       at TLSSocket.emit (node:events:507:28)
+mern-notetaking-app-notetaking-backend-1   |       at emitErrorNT (node:internal/streams/destroy:170:8)
+mern-notetaking-app-notetaking-backend-1   |       at emitErrorCloseNT (node:internal/streams/destroy:129:3)
+mern-notetaking-app-notetaking-backend-1   |       at process.processTicksAndRejections (node:internal/process/task_queues:90:21) {
+mern-notetaking-app-notetaking-backend-1   |     Symbol(errorLabels): Set(1) { 'ResetPool' },
+mern-notetaking-app-notetaking-backend-1   |     [cause]: Error: getaddrinfo ENOTFOUND c.database-app.mongocluster.cosmos.azure.com
+mern-notetaking-app-notetaking-backend-1   |         at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26) {
+mern-notetaking-app-notetaking-backend-1   |       errno: -3008,
+mern-notetaking-app-notetaking-backend-1   |       code: 'ENOTFOUND',
+mern-notetaking-app-notetaking-backend-1   |       syscall: 'getaddrinfo',
+mern-notetaking-app-notetaking-backend-1   |       hostname: 'c.database-app.mongocluster.cosmos.azure.com'
+mern-notetaking-app-notetaking-backend-1   |     }
+mern-notetaking-app-notetaking-backend-1   |   }
+mern-notetaking-app-notetaking-backend-1   | }
+mern-notetaking-app-notetaking-backend-1   | Database error: MongoServerSelectionError: getaddrinfo ENOTFOUND c.database-app.mongocluster.cosmos.azure.com
+mern-notetaking-app-notetaking-backend-1   |     at AbortSignal.<anonymous> (/app/node_modules/mongodb/lib/sdam/topology.js:289:34)
+mern-notetaking-app-notetaking-backend-1   |     at [nodejs.internal.kHybridDispatch] (node:internal/event_target:827:20)
+mern-notetaking-app-notetaking-backend-1   |     at AbortSignal.dispatchEvent (node:internal/event_target:762:26)
+mern-notetaking-app-notetaking-backend-1   |     at runAbort (node:internal/abort_controller:488:10)
+mern-notetaking-app-notetaking-backend-1   |     at abortSignal (node:internal/abort_controller:459:3)
+mern-notetaking-app-notetaking-backend-1   |     at TimeoutController.abort (node:internal/abort_controller:507:5)
+mern-notetaking-app-notetaking-backend-1   |     at Timeout.<anonymous> (/app/node_modules/mongodb/lib/utils.js:976:92)
+mern-notetaking-app-notetaking-backend-1   |     at listOnTimeout (node:internal/timers:608:17)
+mern-notetaking-app-notetaking-backend-1   |     at process.processTimers (node:internal/timers:543:7) {
+mern-notetaking-app-notetaking-backend-1   |   reason: TopologyDescription {
+mern-notetaking-app-notetaking-backend-1   |     type: 'Sharded',
+mern-notetaking-app-notetaking-backend-1   |     servers: Map(1) {
+mern-notetaking-app-notetaking-backend-1   |       'c.database-app.mongocluster.cosmos.azure.com:10260' => [ServerDescription]
+mern-notetaking-app-notetaking-backend-1   |     },
+mern-notetaking-app-notetaking-backend-1   |     stale: false,
+mern-notetaking-app-notetaking-backend-1   |     compatible: true,
+mern-notetaking-app-notetaking-backend-1   |     heartbeatFrequencyMS: 10000,
+mern-notetaking-app-notetaking-backend-1   |     localThresholdMS: 15,
+mern-notetaking-app-notetaking-backend-1   |     setName: null,
+mern-notetaking-app-notetaking-backend-1   |     maxElectionId: null,
+mern-notetaking-app-notetaking-backend-1   |     maxSetVersion: null,
+mern-notetaking-app-notetaking-backend-1   |     commonWireVersion: 0,
+mern-notetaking-app-notetaking-backend-1   |     logicalSessionTimeoutMinutes: null
+mern-notetaking-app-notetaking-backend-1   |   },
+mern-notetaking-app-notetaking-backend-1   |   code: undefined,
+mern-notetaking-app-notetaking-backend-1   |   Symbol(errorLabels): Set(0) {},
+mern-notetaking-app-notetaking-backend-1   |   [cause]: MongoNetworkError: getaddrinfo ENOTFOUND c.database-app.mongocluster.cosmos.azure.com
+mern-notetaking-app-notetaking-backend-1   |       at connectionFailureError (/app/node_modules/mongodb/lib/cmap/connect.js:353:20)
+mern-notetaking-app-notetaking-backend-1   |       at TLSSocket.<anonymous> (/app/node_modules/mongodb/lib/cmap/connect.js:268:44)
+mern-notetaking-app-notetaking-backend-1   |       at Object.onceWrapper (node:events:622:26)
+mern-notetaking-app-notetaking-backend-1   |       at TLSSocket.emit (node:events:507:28)
+mern-notetaking-app-notetaking-backend-1   |       at emitErrorNT (node:internal/streams/destroy:170:8)
+mern-notetaking-app-notetaking-backend-1   |       at emitErrorCloseNT (node:internal/streams/destroy:129:3)
+mern-notetaking-app-notetaking-backend-1   |       at process.processTicksAndRejections (node:internal/process/task_queues:90:21) {
+mern-notetaking-app-notetaking-backend-1   |     Symbol(errorLabels): Set(1) { 'ResetPool' },
+mern-notetaking-app-notetaking-backend-1   |     [cause]: Error: getaddrinfo ENOTFOUND c.database-app.mongocluster.cosmos.azure.com
+mern-notetaking-app-notetaking-backend-1   |         at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26) {
+mern-notetaking-app-notetaking-backend-1   |       errno: -3008,
+mern-notetaking-app-notetaking-backend-1   |       code: 'ENOTFOUND',
+mern-notetaking-app-notetaking-backend-1   |       syscall: 'getaddrinfo',
+mern-notetaking-app-notetaking-backend-1   |       hostname: 'c.database-app.mongocluster.cosmos.azure.com'
+mern-notetaking-app-notetaking-backend-1   |     }
+mern-notetaking-app-notetaking-backend-1   |   }
+mern-notetaking-app-notetaking-backend-1   | }
+mern-notetaking-app-notetaking-frontend-1  | 172.18.0.1 - - [16/May/2025:01:00:57 +0000] "GET /search HTTP/1.1" 200 386 "-" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36" "-"
+mern-notetaking-app-notetaking-frontend-1  | 172.18.0.1 - - [16/May/2025:01:00:57 +0000] "GET /logo.png HTTP/1.1" 304 0 "http://localhost:3000/search" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36" "-"
+mern-notetaking-app-notetaking-backend-1   | Validation successful
+mern-notetaking-app-notetaking-backend-1   | Validation successful
+mern-notetaking-app-notetaking-backend-1   | [
+mern-notetaking-app-notetaking-backend-1   |   {
+mern-notetaking-app-notetaking-backend-1   |     _id: new ObjectId('6820bbcd27bcec8b5a689de8'),
+mern-notetaking-app-notetaking-backend-1   |     user_id: new ObjectId('682025d81c383456bedb43e1'),
+mern-notetaking-app-notetaking-backend-1   |     label_name: 'Homework',
+mern-notetaking-app-notetaking-backend-1   |     created_at: 2025-05-11T15:01:33.033Z,
+mern-notetaking-app-notetaking-backend-1   |     __v: 0
+mern-notetaking-app-notetaking-backend-1   |   },
+mern-notetaking-app-notetaking-backend-1   |   {
+mern-notetaking-app-notetaking-backend-1   |     _id: new ObjectId('6822c2b36642dd20590fdae2'),
+mern-notetaking-app-notetaking-backend-1   |     user_id: new ObjectId('682025d81c383456bedb43e1'),
+mern-notetaking-app-notetaking-backend-1   |     label_name: 'Programming',
+mern-notetaking-app-notetaking-backend-1   |     created_at: 2025-05-13T03:55:31.423Z,
+mern-notetaking-app-notetaking-backend-1   |     __v: 0
+mern-notetaking-app-notetaking-backend-1   |   },
+mern-notetaking-app-notetaking-backend-1   |   {
+mern-notetaking-app-notetaking-backend-1   |     _id: new ObjectId('682311a185da04dee381e026'),
+mern-notetaking-app-notetaking-backend-1   |     user_id: new ObjectId('682025d81c383456bedb43e1'),
+mern-notetaking-app-notetaking-backend-1   |     label_name: 'Math',
+mern-notetaking-app-notetaking-backend-1   |     created_at: 2025-05-13T09:32:17.919Z,
+mern-notetaking-app-notetaking-backend-1   |     __v: 0
+mern-notetaking-app-notetaking-backend-1   |   }
+mern-notetaking-app-notetaking-backend-1   | ]
+mern-notetaking-app-notetaking-frontend-1  | 172.18.0.1 - - [16/May/2025:01:01:03 +0000] "GET /search HTTP/1.1" 304 0 "-" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36" "-"
+mern-notetaking-app-notetaking-backend-1   | Validation successful
+mern-notetaking-app-notetaking-backend-1   | Validation successful
+mern-notetaking-app-notetaking-backend-1   | [
+mern-notetaking-app-notetaking-backend-1   |   {
+mern-notetaking-app-notetaking-backend-1   |     _id: new ObjectId('6820bbcd27bcec8b5a689de8'),
+mern-notetaking-app-notetaking-backend-1   |     user_id: new ObjectId('682025d81c383456bedb43e1'),
+mern-notetaking-app-notetaking-backend-1   |     label_name: 'Homework',
+mern-notetaking-app-notetaking-backend-1   |     created_at: 2025-05-11T15:01:33.033Z,
+mern-notetaking-app-notetaking-backend-1   |     __v: 0
+mern-notetaking-app-notetaking-backend-1   |   },
+mern-notetaking-app-notetaking-backend-1   |   {
+mern-notetaking-app-notetaking-backend-1   |     _id: new ObjectId('6822c2b36642dd20590fdae2'),
+mern-notetaking-app-notetaking-backend-1   |     user_id: new ObjectId('682025d81c383456bedb43e1'),
+mern-notetaking-app-notetaking-backend-1   |     label_name: 'Programming',
+mern-notetaking-app-notetaking-backend-1   |     created_at: 2025-05-13T03:55:31.423Z,
+mern-notetaking-app-notetaking-backend-1   |     __v: 0
+mern-notetaking-app-notetaking-backend-1   |   },
+mern-notetaking-app-notetaking-backend-1   |   {
+mern-notetaking-app-notetaking-backend-1   |     _id: new ObjectId('682311a185da04dee381e026'),
+mern-notetaking-app-notetaking-backend-1   |     user_id: new ObjectId('682025d81c383456bedb43e1'),
+mern-notetaking-app-notetaking-backend-1   |     label_name: 'Math',
+mern-notetaking-app-notetaking-backend-1   |     created_at: 2025-05-13T09:32:17.919Z,
+mern-notetaking-app-notetaking-backend-1   |     __v: 0
+mern-notetaking-app-notetaking-backend-1   |   }
+mern-notetaking-app-notetaking-backend-1   | ]
+mern-notetaking-app-notetaking-frontend-1  | 172.18.0.1 - - [16/May/2025:01:01:05 +0000] "GET /search HTTP/1.1" 304 0 "-" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36" "-"
+mern-notetaking-app-notetaking-backend-1   | Validation successful
+mern-notetaking-app-notetaking-backend-1   | Validation successful
+mern-notetaking-app-notetaking-backend-1   | [
+mern-notetaking-app-notetaking-backend-1   |   {
+mern-notetaking-app-notetaking-backend-1   |     _id: new ObjectId('6820bbcd27bcec8b5a689de8'),
+mern-notetaking-app-notetaking-backend-1   |     user_id: new ObjectId('682025d81c383456bedb43e1'),
+mern-notetaking-app-notetaking-backend-1   |     label_name: 'Homework',
+mern-notetaking-app-notetaking-backend-1   |     created_at: 2025-05-11T15:01:33.033Z,
+mern-notetaking-app-notetaking-backend-1   |     __v: 0
+mern-notetaking-app-notetaking-backend-1   |   },
+mern-notetaking-app-notetaking-backend-1   |   {
+mern-notetaking-app-notetaking-backend-1   |     _id: new ObjectId('6822c2b36642dd20590fdae2'),
+mern-notetaking-app-notetaking-backend-1   |     user_id: new ObjectId('682025d81c383456bedb43e1'),
+mern-notetaking-app-notetaking-backend-1   |     label_name: 'Programming',
+mern-notetaking-app-notetaking-backend-1   |     created_at: 2025-05-13T03:55:31.423Z,
+mern-notetaking-app-notetaking-backend-1   |     __v: 0
+mern-notetaking-app-notetaking-backend-1   |   },
+mern-notetaking-app-notetaking-backend-1   |   {
+mern-notetaking-app-notetaking-backend-1   |     _id: new ObjectId('682311a185da04dee381e026'),
+mern-notetaking-app-notetaking-backend-1   |     user_id: new ObjectId('682025d81c383456bedb43e1'),
+mern-notetaking-app-notetaking-backend-1   |     label_name: 'Math',
+mern-notetaking-app-notetaking-backend-1   |     created_at: 2025-05-13T09:32:17.919Z,
+mern-notetaking-app-notetaking-backend-1   |     __v: 0
+mern-notetaking-app-notetaking-backend-1   |   }
+mern-notetaking-app-notetaking-backend-1   | ]
+mern-notetaking-app-notetaking-backend-1   | Validation successful
+mern-notetaking-app-notetaking-frontend-1  | 172.18.0.1 - - [16/May/2025:01:01:11 +0000] "GET /cat.gif HTTP/1.1" 304 0 "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36" "-"
+mern-notetaking-app-notetaking-frontend-1  | 172.18.0.1 - - [16/May/2025:01:01:11 +0000] "GET /1747148174372-free-images.jpg HTTP/1.1" 304 0 "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36" "-"
+mern-notetaking-app-notetaking-frontend-1  | 172.18.0.1 - - [16/May/2025:01:01:11 +0000] "GET /1747303928694-1747144961292-6399a4d27711a5ad2c9bf5cd_ben-sweet-2LowviVHZ-E-unsplash-1.jpeg HTTP/1.1" 304 0 "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36" "-"
+mern-notetaking-app-notetaking-frontend-1  | 172.18.0.1 - - [16/May/2025:01:01:11 +0000] "GET /group.png HTTP/1.1" 304 0 "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36" "-"
+mern-notetaking-app-notetaking-backend-1   | Validation successful
+mern-notetaking-app-notetaking-backend-1   | Validation successful
+mern-notetaking-app-notetaking-backend-1   | [
+mern-notetaking-app-notetaking-backend-1   |   {
+mern-notetaking-app-notetaking-backend-1   |     _id: new ObjectId('6820bbcd27bcec8b5a689de8'),
+mern-notetaking-app-notetaking-backend-1   |     user_id: new ObjectId('682025d81c383456bedb43e1'),
+mern-notetaking-app-notetaking-backend-1   |     label_name: 'Homework',
+mern-notetaking-app-notetaking-backend-1   |     created_at: 2025-05-11T15:01:33.033Z,
+mern-notetaking-app-notetaking-backend-1   |     __v: 0
+mern-notetaking-app-notetaking-backend-1   |   },
+mern-notetaking-app-notetaking-backend-1   |   {
+mern-notetaking-app-notetaking-backend-1   |     _id: new ObjectId('6822c2b36642dd20590fdae2'),
+mern-notetaking-app-notetaking-backend-1   |     user_id: new ObjectId('682025d81c383456bedb43e1'),
+mern-notetaking-app-notetaking-backend-1   |     label_name: 'Programming',
+mern-notetaking-app-notetaking-backend-1   |     created_at: 2025-05-13T03:55:31.423Z,
+mern-notetaking-app-notetaking-backend-1   |     __v: 0
+mern-notetaking-app-notetaking-backend-1   |   },
+mern-notetaking-app-notetaking-backend-1   |   {
+mern-notetaking-app-notetaking-backend-1   |     _id: new ObjectId('682311a185da04dee381e026'),
+mern-notetaking-app-notetaking-backend-1   |     user_id: new ObjectId('682025d81c383456bedb43e1'),
+mern-notetaking-app-notetaking-backend-1   |     label_name: 'Math',
+mern-notetaking-app-notetaking-backend-1   |     created_at: 2025-05-13T09:32:17.919Z,
+mern-notetaking-app-notetaking-backend-1   |     __v: 0
+mern-notetaking-app-notetaking-backend-1   |   }
+mern-notetaking-app-notetaking-backend-1   | ]
+mern-notetaking-app-notetaking-backend-1   | Validation successful
+mern-notetaking-app-notetaking-backend-1   | [
+mern-notetaking-app-notetaking-backend-1   |   {
+mern-notetaking-app-notetaking-backend-1   |     _id: new ObjectId('6820bbcd27bcec8b5a689de8'),
+mern-notetaking-app-notetaking-backend-1   |     user_id: new ObjectId('682025d81c383456bedb43e1'),
+mern-notetaking-app-notetaking-backend-1   |     label_name: 'Homework',
+mern-notetaking-app-notetaking-backend-1   |     created_at: 2025-05-11T15:01:33.033Z,
+mern-notetaking-app-notetaking-backend-1   |     __v: 0
+mern-notetaking-app-notetaking-backend-1   |   },
+mern-notetaking-app-notetaking-backend-1   |   {
+mern-notetaking-app-notetaking-backend-1   |     _id: new ObjectId('6822c2b36642dd20590fdae2'),
+mern-notetaking-app-notetaking-backend-1   |     user_id: new ObjectId('682025d81c383456bedb43e1'),
+mern-notetaking-app-notetaking-backend-1   |     label_name: 'Programming',
+mern-notetaking-app-notetaking-backend-1   |     created_at: 2025-05-13T03:55:31.423Z,
+mern-notetaking-app-notetaking-backend-1   |     __v: 0
+mern-notetaking-app-notetaking-backend-1   |   },
+mern-notetaking-app-notetaking-backend-1   |   {
+mern-notetaking-app-notetaking-backend-1   |     _id: new ObjectId('682311a185da04dee381e026'),
+mern-notetaking-app-notetaking-backend-1   |     user_id: new ObjectId('682025d81c383456bedb43e1'),
+mern-notetaking-app-notetaking-backend-1   |     label_name: 'Math',
+mern-notetaking-app-notetaking-backend-1   |     created_at: 2025-05-13T09:32:17.919Z,
+mern-notetaking-app-notetaking-backend-1   |     __v: 0
+mern-notetaking-app-notetaking-backend-1   |   }
+mern-notetaking-app-notetaking-backend-1   | ]
+mern-notetaking-app-notetaking-backend-1   | Validation successful
+mern-notetaking-app-notetaking-backend-1   | Validation successful
+mern-notetaking-app-notetaking-backend-1   | Validation successful
+mern-notetaking-app-notetaking-frontend-1  | 172.18.0.1 - - [16/May/2025:01:09:21 +0000] "GET /1747350914653-1747144961292-6399a4d27711a5ad2c9bf5cd_ben-sweet-2LowviVHZ-E-unsplash-1.jpeg HTTP/1.1" 304 0 "http://localhost:3000/trash" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36" "-"
+mern-notetaking-app-notetaking-frontend-1  | 172.18.0.1 - - [16/May/2025:01:09:21 +0000] "GET /1747304269129-free-images.jpg HTTP/1.1" 304 0 "http://localhost:3000/trash" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36" "-"
+mern-notetaking-app-notetaking-frontend-1  | 172.18.0.1 - - [16/May/2025:01:09:21 +0000] "GET /1747147060016-1747145420372-6399a4d27711a5ad2c9bf5cd_ben-sweet-2LowviVHZ-E-unsplash-1.jpeg HTTP/1.1" 304 0 "http://localhost:3000/trash" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36" "-"
+mern-notetaking-app-notetaking-backend-1   | Validation successful
+mern-notetaking-app-notetaking-backend-1   | [
+mern-notetaking-app-notetaking-backend-1   |   {
+mern-notetaking-app-notetaking-backend-1   |     _id: new ObjectId('6820bbcd27bcec8b5a689de8'),
+mern-notetaking-app-notetaking-backend-1   |     user_id: new ObjectId('682025d81c383456bedb43e1'),
+mern-notetaking-app-notetaking-backend-1   |     label_name: 'Homework',
+mern-notetaking-app-notetaking-backend-1   |     created_at: 2025-05-11T15:01:33.033Z,
+mern-notetaking-app-notetaking-backend-1   |     __v: 0
+mern-notetaking-app-notetaking-backend-1   |   },
+mern-notetaking-app-notetaking-backend-1   |   {
+mern-notetaking-app-notetaking-backend-1   |     _id: new ObjectId('6822c2b36642dd20590fdae2'),
+mern-notetaking-app-notetaking-backend-1   |     user_id: new ObjectId('682025d81c383456bedb43e1'),
+mern-notetaking-app-notetaking-backend-1   |     label_name: 'Programming',
+mern-notetaking-app-notetaking-backend-1   |     created_at: 2025-05-13T03:55:31.423Z,
+mern-notetaking-app-notetaking-backend-1   |     __v: 0
+mern-notetaking-app-notetaking-backend-1   |   },
+mern-notetaking-app-notetaking-backend-1   |   {
+mern-notetaking-app-notetaking-backend-1   |     _id: new ObjectId('682311a185da04dee381e026'),
+mern-notetaking-app-notetaking-backend-1   |     user_id: new ObjectId('682025d81c383456bedb43e1'),
+mern-notetaking-app-notetaking-backend-1   |     label_name: 'Math',
+mern-notetaking-app-notetaking-backend-1   |     created_at: 2025-05-13T09:32:17.919Z,
+mern-notetaking-app-notetaking-backend-1   |     __v: 0
+mern-notetaking-app-notetaking-backend-1   |   }
+mern-notetaking-app-notetaking-backend-1   | ]
+mern-notetaking-app-notetaking-backend-1   | Validation successful
+mern-notetaking-app-notetaking-frontend-1  | 172.18.0.1 - - [16/May/2025:01:12:03 +0000] "GET / HTTP/1.1" 304 0 "-" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36" "-"
+mern-notetaking-app-notetaking-frontend-1  | 172.18.0.1 - - [16/May/2025:01:12:03 +0000] "GET /assets/index-CLh0zY2L.js HTTP/1.1" 304 0 "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36" "-"
+mern-notetaking-app-notetaking-frontend-1  | 172.18.0.1 - - [16/May/2025:01:12:03 +0000] "GET /assets/logo-CRVBucE1.png HTTP/1.1" 304 0 "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36" "-"
+mern-notetaking-app-notetaking-frontend-1  | 172.18.0.1 - - [16/May/2025:01:12:03 +0000] "GET /logo.png HTTP/1.1" 304 0 "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36" "-"
+mern-notetaking-app-notetaking-backend-1   | Validation successful
+mern-notetaking-app-notetaking-backend-1   | Validation successful
+mern-notetaking-app-notetaking-backend-1   | [
+mern-notetaking-app-notetaking-backend-1   |   {
+mern-notetaking-app-notetaking-backend-1   |     _id: new ObjectId('6820bbcd27bcec8b5a689de8'),
+mern-notetaking-app-notetaking-backend-1   |     user_id: new ObjectId('682025d81c383456bedb43e1'),
+mern-notetaking-app-notetaking-backend-1   |     label_name: 'Homework',
+mern-notetaking-app-notetaking-backend-1   |     created_at: 2025-05-11T15:01:33.033Z,
+mern-notetaking-app-notetaking-backend-1   |     __v: 0
+mern-notetaking-app-notetaking-backend-1   |   },
+mern-notetaking-app-notetaking-backend-1   |   {
+mern-notetaking-app-notetaking-backend-1   |     _id: new ObjectId('6822c2b36642dd20590fdae2'),
+mern-notetaking-app-notetaking-backend-1   |     user_id: new ObjectId('682025d81c383456bedb43e1'),
+mern-notetaking-app-notetaking-backend-1   |     label_name: 'Programming',
+mern-notetaking-app-notetaking-backend-1   |     created_at: 2025-05-13T03:55:31.423Z,
+mern-notetaking-app-notetaking-backend-1   |     __v: 0
+mern-notetaking-app-notetaking-backend-1   |   },
+mern-notetaking-app-notetaking-backend-1   |   {
+mern-notetaking-app-notetaking-backend-1   |     _id: new ObjectId('682311a185da04dee381e026'),
+mern-notetaking-app-notetaking-backend-1   |     user_id: new ObjectId('682025d81c383456bedb43e1'),
+mern-notetaking-app-notetaking-backend-1   |     label_name: 'Math',
+mern-notetaking-app-notetaking-backend-1   |     created_at: 2025-05-13T09:32:17.919Z,
+mern-notetaking-app-notetaking-backend-1   |     __v: 0
+mern-notetaking-app-notetaking-backend-1   |   }
+mern-notetaking-app-notetaking-backend-1   | ]
+mern-notetaking-app-notetaking-backend-1   | Validation successful
+mern-notetaking-app-notetaking-frontend-1  | 172.18.0.1 - - [16/May/2025:01:12:05 +0000] "GET /group.png HTTP/1.1" 304 0 "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36" "-"
+mern-notetaking-app-notetaking-frontend-1  | 172.18.0.1 - - [16/May/2025:01:12:05 +0000] "GET /1747148174372-free-images.jpg HTTP/1.1" 304 0 "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36" "-"
+mern-notetaking-app-notetaking-frontend-1  | 172.18.0.1 - - [16/May/2025:01:12:05 +0000] "GET /1747303928694-1747144961292-6399a4d27711a5ad2c9bf5cd_ben-sweet-2LowviVHZ-E-unsplash-1.jpeg HTTP/1.1" 304 0 "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36" "-"
+mern-notetaking-app-notetaking-frontend-1  | 172.18.0.1 - - [16/May/2025:01:12:05 +0000] "GET /cat.gif HTTP/1.1" 304 0 "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36" "-"
+mern-notetaking-app-notetaking-backend-1   | Database error: MongoServerSelectionError: getaddrinfo ENOTFOUND c.database-app.mongocluster.cosmos.azure.com
+mern-notetaking-app-notetaking-backend-1   |     at AbortSignal.<anonymous> (/app/node_modules/mongodb/lib/sdam/topology.js:289:34)
+mern-notetaking-app-notetaking-backend-1   |     at [nodejs.internal.kHybridDispatch] (node:internal/event_target:827:20)
+mern-notetaking-app-notetaking-backend-1   |     at AbortSignal.dispatchEvent (node:internal/event_target:762:26)
+mern-notetaking-app-notetaking-backend-1   |     at runAbort (node:internal/abort_controller:488:10)
+mern-notetaking-app-notetaking-backend-1   |     at abortSignal (node:internal/abort_controller:459:3)
+mern-notetaking-app-notetaking-backend-1   |     at TimeoutController.abort (node:internal/abort_controller:507:5)
+mern-notetaking-app-notetaking-backend-1   |     at Timeout.<anonymous> (/app/node_modules/mongodb/lib/utils.js:976:92)
+mern-notetaking-app-notetaking-backend-1   |     at listOnTimeout (node:internal/timers:608:17)
+mern-notetaking-app-notetaking-backend-1   |     at process.processTimers (node:internal/timers:543:7) {
+mern-notetaking-app-notetaking-backend-1   |   reason: TopologyDescription {
+mern-notetaking-app-notetaking-backend-1   |     type: 'Sharded',
+mern-notetaking-app-notetaking-backend-1   |     servers: Map(1) {
+mern-notetaking-app-notetaking-backend-1   |       'c.database-app.mongocluster.cosmos.azure.com:10260' => [ServerDescription]
+mern-notetaking-app-notetaking-backend-1   |     },
+mern-notetaking-app-notetaking-backend-1   |     stale: false,
+mern-notetaking-app-notetaking-backend-1   |     compatible: true,
+mern-notetaking-app-notetaking-backend-1   |     heartbeatFrequencyMS: 10000,
+mern-notetaking-app-notetaking-backend-1   |     localThresholdMS: 15,
+mern-notetaking-app-notetaking-backend-1   |     setName: null,
+mern-notetaking-app-notetaking-backend-1   |     maxElectionId: null,
+mern-notetaking-app-notetaking-backend-1   |     maxSetVersion: null,
+mern-notetaking-app-notetaking-backend-1   |     commonWireVersion: 0,
+mern-notetaking-app-notetaking-backend-1   |     logicalSessionTimeoutMinutes: null
+mern-notetaking-app-notetaking-backend-1   |   },
+mern-notetaking-app-notetaking-backend-1   |   code: undefined,
+mern-notetaking-app-notetaking-backend-1   |   Symbol(errorLabels): Set(0) {},
+mern-notetaking-app-notetaking-backend-1   |   [cause]: MongoNetworkError: getaddrinfo ENOTFOUND c.database-app.mongocluster.cosmos.azure.com
+mern-notetaking-app-notetaking-backend-1   |       at connectionFailureError (/app/node_modules/mongodb/lib/cmap/connect.js:353:20)
+mern-notetaking-app-notetaking-backend-1   |       at TLSSocket.<anonymous> (/app/node_modules/mongodb/lib/cmap/connect.js:268:44)
+mern-notetaking-app-notetaking-backend-1   |       at Object.onceWrapper (node:events:622:26)
+mern-notetaking-app-notetaking-backend-1   |       at TLSSocket.emit (node:events:507:28)
+mern-notetaking-app-notetaking-backend-1   |       at emitErrorNT (node:internal/streams/destroy:170:8)
+mern-notetaking-app-notetaking-backend-1   |       at emitErrorCloseNT (node:internal/streams/destroy:129:3)
+mern-notetaking-app-notetaking-backend-1   |       at process.processTicksAndRejections (node:internal/process/task_queues:90:21) {
+mern-notetaking-app-notetaking-backend-1   |     Symbol(errorLabels): Set(1) { 'ResetPool' },
+mern-notetaking-app-notetaking-backend-1   |     [cause]: Error: getaddrinfo ENOTFOUND c.database-app.mongocluster.cosmos.azure.com
+mern-notetaking-app-notetaking-backend-1   |         at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26) {
+mern-notetaking-app-notetaking-backend-1   |       errno: -3008,
+mern-notetaking-app-notetaking-backend-1   |       code: 'ENOTFOUND',
+mern-notetaking-app-notetaking-backend-1   |       syscall: 'getaddrinfo',
+mern-notetaking-app-notetaking-backend-1   |       hostname: 'c.database-app.mongocluster.cosmos.azure.com'
+mern-notetaking-app-notetaking-backend-1   |     }
+mern-notetaking-app-notetaking-backend-1   |   }
+mern-notetaking-app-notetaking-backend-1   | }
+mern-notetaking-app-notetaking-backend-1   | Database error: MongoServerSelectionError: getaddrinfo ENOTFOUND c.database-app.mongocluster.cosmos.azure.com
+mern-notetaking-app-notetaking-backend-1   |     at AbortSignal.<anonymous> (/app/node_modules/mongodb/lib/sdam/topology.js:289:34)
+mern-notetaking-app-notetaking-backend-1   |     at [nodejs.internal.kHybridDispatch] (node:internal/event_target:827:20)
+mern-notetaking-app-notetaking-backend-1   |     at AbortSignal.dispatchEvent (node:internal/event_target:762:26)
+mern-notetaking-app-notetaking-backend-1   |     at runAbort (node:internal/abort_controller:488:10)
+mern-notetaking-app-notetaking-backend-1   |     at abortSignal (node:internal/abort_controller:459:3)
+mern-notetaking-app-notetaking-backend-1   |     at TimeoutController.abort (node:internal/abort_controller:507:5)
+mern-notetaking-app-notetaking-backend-1   |     at Timeout.<anonymous> (/app/node_modules/mongodb/lib/utils.js:976:92)
+mern-notetaking-app-notetaking-backend-1   |     at listOnTimeout (node:internal/timers:608:17)
+mern-notetaking-app-notetaking-backend-1   |     at process.processTimers (node:internal/timers:543:7) {
+mern-notetaking-app-notetaking-backend-1   |   reason: TopologyDescription {
+mern-notetaking-app-notetaking-backend-1   |     type: 'Sharded',
+mern-notetaking-app-notetaking-backend-1   |     servers: Map(1) {
+mern-notetaking-app-notetaking-backend-1   |       'c.database-app.mongocluster.cosmos.azure.com:10260' => [ServerDescription]
+mern-notetaking-app-notetaking-backend-1   |     },
+mern-notetaking-app-notetaking-backend-1   |     stale: false,
+mern-notetaking-app-notetaking-backend-1   |     compatible: true,
+mern-notetaking-app-notetaking-backend-1   |     heartbeatFrequencyMS: 10000,
+mern-notetaking-app-notetaking-backend-1   |     localThresholdMS: 15,
+mern-notetaking-app-notetaking-backend-1   |     setName: null,
+mern-notetaking-app-notetaking-backend-1   |     maxElectionId: null,
+mern-notetaking-app-notetaking-backend-1   |     maxSetVersion: null,
+mern-notetaking-app-notetaking-backend-1   |     commonWireVersion: 0,
+mern-notetaking-app-notetaking-backend-1   |     logicalSessionTimeoutMinutes: null
+mern-notetaking-app-notetaking-backend-1   |   },
+mern-notetaking-app-notetaking-backend-1   |   code: undefined,
+mern-notetaking-app-notetaking-backend-1   |   Symbol(errorLabels): Set(0) {},
+mern-notetaking-app-notetaking-backend-1   |   [cause]: MongoNetworkError: getaddrinfo ENOTFOUND c.database-app.mongocluster.cosmos.azure.com
+mern-notetaking-app-notetaking-backend-1   |       at connectionFailureError (/app/node_modules/mongodb/lib/cmap/connect.js:353:20)
+mern-notetaking-app-notetaking-backend-1   |       at TLSSocket.<anonymous> (/app/node_modules/mongodb/lib/cmap/connect.js:268:44)
+mern-notetaking-app-notetaking-backend-1   |       at Object.onceWrapper (node:events:622:26)
+mern-notetaking-app-notetaking-backend-1   |       at TLSSocket.emit (node:events:507:28)
+mern-notetaking-app-notetaking-backend-1   |       at emitErrorNT (node:internal/streams/destroy:170:8)
+mern-notetaking-app-notetaking-backend-1   |       at emitErrorCloseNT (node:internal/streams/destroy:129:3)
+mern-notetaking-app-notetaking-backend-1   |       at process.processTicksAndRejections (node:internal/process/task_queues:90:21) {
+mern-notetaking-app-notetaking-backend-1   |     Symbol(errorLabels): Set(1) { 'ResetPool' },
+mern-notetaking-app-notetaking-backend-1   |     [cause]: Error: getaddrinfo ENOTFOUND c.database-app.mongocluster.cosmos.azure.com
+mern-notetaking-app-notetaking-backend-1   |         at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26) {
+mern-notetaking-app-notetaking-backend-1   |       errno: -3008,
+mern-notetaking-app-notetaking-backend-1   |       code: 'ENOTFOUND',
+mern-notetaking-app-notetaking-backend-1   |       syscall: 'getaddrinfo',
+mern-notetaking-app-notetaking-backend-1   |       hostname: 'c.database-app.mongocluster.cosmos.azure.com'
+mern-notetaking-app-notetaking-backend-1   |     }
+mern-notetaking-app-notetaking-backend-1   |   }
+mern-notetaking-app-notetaking-backend-1   | }
+mern-notetaking-app-notetaking-frontend-1  | 172.18.0.1 - - [16/May/2025:01:21:11 +0000] "GET /Programming HTTP/1.1" 200 386 "-" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36" "-"
+mern-notetaking-app-notetaking-backend-1   | Database error: MongoServerSelectionError: getaddrinfo ENOTFOUND c.database-app.mongocluster.cosmos.azure.com
+mern-notetaking-app-notetaking-backend-1   |     at AbortSignal.<anonymous> (/app/node_modules/mongodb/lib/sdam/topology.js:289:34)
+mern-notetaking-app-notetaking-backend-1   |     at [nodejs.internal.kHybridDispatch] (node:internal/event_target:827:20)
+mern-notetaking-app-notetaking-backend-1   |     at AbortSignal.dispatchEvent (node:internal/event_target:762:26)
+mern-notetaking-app-notetaking-backend-1   |     at runAbort (node:internal/abort_controller:488:10)
+mern-notetaking-app-notetaking-backend-1   |     at abortSignal (node:internal/abort_controller:459:3)
+mern-notetaking-app-notetaking-backend-1   |     at TimeoutController.abort (node:internal/abort_controller:507:5)
+mern-notetaking-app-notetaking-backend-1   |     at Timeout.<anonymous> (/app/node_modules/mongodb/lib/utils.js:976:92)
+mern-notetaking-app-notetaking-backend-1   |     at listOnTimeout (node:internal/timers:608:17)
+mern-notetaking-app-notetaking-backend-1   |     at process.processTimers (node:internal/timers:543:7) {
+mern-notetaking-app-notetaking-backend-1   |   reason: TopologyDescription {
+mern-notetaking-app-notetaking-backend-1   |     type: 'Sharded',
+mern-notetaking-app-notetaking-backend-1   |     servers: Map(1) {
+mern-notetaking-app-notetaking-backend-1   |       'c.database-app.mongocluster.cosmos.azure.com:10260' => [ServerDescription]
+mern-notetaking-app-notetaking-backend-1   |     },
+mern-notetaking-app-notetaking-backend-1   |     stale: false,
+mern-notetaking-app-notetaking-backend-1   |     compatible: true,
+mern-notetaking-app-notetaking-backend-1   |     heartbeatFrequencyMS: 10000,
+mern-notetaking-app-notetaking-backend-1   |     localThresholdMS: 15,
+mern-notetaking-app-notetaking-backend-1   |     setName: null,
+mern-notetaking-app-notetaking-backend-1   |     maxElectionId: null,
+mern-notetaking-app-notetaking-backend-1   |     maxSetVersion: null,
+mern-notetaking-app-notetaking-backend-1   |     commonWireVersion: 0,
+mern-notetaking-app-notetaking-backend-1   |     logicalSessionTimeoutMinutes: null
+mern-notetaking-app-notetaking-backend-1   |   },
+mern-notetaking-app-notetaking-backend-1   |   code: undefined,
+mern-notetaking-app-notetaking-backend-1   |   Symbol(errorLabels): Set(0) {},
+mern-notetaking-app-notetaking-backend-1   |   [cause]: MongoNetworkError: getaddrinfo ENOTFOUND c.database-app.mongocluster.cosmos.azure.com
+mern-notetaking-app-notetaking-backend-1   |       at connectionFailureError (/app/node_modules/mongodb/lib/cmap/connect.js:353:20)
+mern-notetaking-app-notetaking-backend-1   |       at TLSSocket.<anonymous> (/app/node_modules/mongodb/lib/cmap/connect.js:268:44)
+mern-notetaking-app-notetaking-backend-1   |       at Object.onceWrapper (node:events:622:26)
+mern-notetaking-app-notetaking-backend-1   |       at TLSSocket.emit (node:events:507:28)
+mern-notetaking-app-notetaking-backend-1   |       at emitErrorNT (node:internal/streams/destroy:170:8)
+mern-notetaking-app-notetaking-backend-1   |       at emitErrorCloseNT (node:internal/streams/destroy:129:3)
+mern-notetaking-app-notetaking-backend-1   |       at process.processTicksAndRejections (node:internal/process/task_queues:90:21) {
+mern-notetaking-app-notetaking-backend-1   |     Symbol(errorLabels): Set(1) { 'ResetPool' },
+mern-notetaking-app-notetaking-backend-1   |     [cause]: Error: getaddrinfo ENOTFOUND c.database-app.mongocluster.cosmos.azure.com
+mern-notetaking-app-notetaking-backend-1   |         at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26) {
+mern-notetaking-app-notetaking-backend-1   |       errno: -3008,
+mern-notetaking-app-notetaking-backend-1   |       code: 'ENOTFOUND',
+mern-notetaking-app-notetaking-backend-1   |       syscall: 'getaddrinfo',
+mern-notetaking-app-notetaking-backend-1   |       hostname: 'c.database-app.mongocluster.cosmos.azure.com'
+mern-notetaking-app-notetaking-backend-1   |     }
+mern-notetaking-app-notetaking-backend-1   |   }
+mern-notetaking-app-notetaking-backend-1   | }
+mern-notetaking-app-notetaking-backend-1   | Database error: MongoServerSelectionError: getaddrinfo ENOTFOUND c.database-app.mongocluster.cosmos.azure.com
+mern-notetaking-app-notetaking-backend-1   |     at AbortSignal.<anonymous> (/app/node_modules/mongodb/lib/sdam/topology.js:289:34)
+mern-notetaking-app-notetaking-backend-1   |     at [nodejs.internal.kHybridDispatch] (node:internal/event_target:827:20)
+mern-notetaking-app-notetaking-backend-1   |     at AbortSignal.dispatchEvent (node:internal/event_target:762:26)
+mern-notetaking-app-notetaking-backend-1   |     at runAbort (node:internal/abort_controller:488:10)
+mern-notetaking-app-notetaking-backend-1   |     at abortSignal (node:internal/abort_controller:459:3)
+mern-notetaking-app-notetaking-backend-1   |     at TimeoutController.abort (node:internal/abort_controller:507:5)
+mern-notetaking-app-notetaking-backend-1   |     at Timeout.<anonymous> (/app/node_modules/mongodb/lib/utils.js:976:92)
+mern-notetaking-app-notetaking-backend-1   |     at listOnTimeout (node:internal/timers:608:17)
+mern-notetaking-app-notetaking-backend-1   |     at process.processTimers (node:internal/timers:543:7) {
+mern-notetaking-app-notetaking-backend-1   |   reason: TopologyDescription {
+mern-notetaking-app-notetaking-backend-1   |     type: 'Sharded',
+mern-notetaking-app-notetaking-backend-1   |     servers: Map(1) {
+mern-notetaking-app-notetaking-backend-1   |       'c.database-app.mongocluster.cosmos.azure.com:10260' => [ServerDescription]
+mern-notetaking-app-notetaking-backend-1   |     },
+mern-notetaking-app-notetaking-backend-1   |     stale: false,
+mern-notetaking-app-notetaking-backend-1   |     compatible: true,
+mern-notetaking-app-notetaking-backend-1   |     heartbeatFrequencyMS: 10000,
+mern-notetaking-app-notetaking-backend-1   |     localThresholdMS: 15,
+mern-notetaking-app-notetaking-backend-1   |     setName: null,
+mern-notetaking-app-notetaking-backend-1   |     maxElectionId: null,
+mern-notetaking-app-notetaking-backend-1   |     maxSetVersion: null,
+mern-notetaking-app-notetaking-backend-1   |     commonWireVersion: 0,
+mern-notetaking-app-notetaking-backend-1   |     logicalSessionTimeoutMinutes: null
+mern-notetaking-app-notetaking-backend-1   |   },
+mern-notetaking-app-notetaking-backend-1   |   code: undefined,
+mern-notetaking-app-notetaking-backend-1   |   Symbol(errorLabels): Set(0) {},
+mern-notetaking-app-notetaking-backend-1   |   [cause]: MongoNetworkError: getaddrinfo ENOTFOUND c.database-app.mongocluster.cosmos.azure.com
+mern-notetaking-app-notetaking-backend-1   |       at connectionFailureError (/app/node_modules/mongodb/lib/cmap/connect.js:353:20)
+mern-notetaking-app-notetaking-backend-1   |       at TLSSocket.<anonymous> (/app/node_modules/mongodb/lib/cmap/connect.js:268:44)
+mern-notetaking-app-notetaking-backend-1   |       at Object.onceWrapper (node:events:622:26)
+mern-notetaking-app-notetaking-backend-1   |       at TLSSocket.emit (node:events:507:28)
+mern-notetaking-app-notetaking-backend-1   |       at emitErrorNT (node:internal/streams/destroy:170:8)
+mern-notetaking-app-notetaking-backend-1   |       at emitErrorCloseNT (node:internal/streams/destroy:129:3)
+mern-notetaking-app-notetaking-backend-1   |       at process.processTicksAndRejections (node:internal/process/task_queues:90:21) {
+mern-notetaking-app-notetaking-backend-1   |     Symbol(errorLabels): Set(1) { 'ResetPool' },
+mern-notetaking-app-notetaking-backend-1   |     [cause]: Error: getaddrinfo ENOTFOUND c.database-app.mongocluster.cosmos.azure.com
+mern-notetaking-app-notetaking-backend-1   |         at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26) {
+mern-notetaking-app-notetaking-backend-1   |       errno: -3008,
+mern-notetaking-app-notetaking-backend-1   |       code: 'ENOTFOUND',
+mern-notetaking-app-notetaking-backend-1   |       syscall: 'getaddrinfo',
+mern-notetaking-app-notetaking-backend-1   |       hostname: 'c.database-app.mongocluster.cosmos.azure.com'
+mern-notetaking-app-notetaking-backend-1   |     }
+mern-notetaking-app-notetaking-backend-1   |   }
+mern-notetaking-app-notetaking-backend-1   | }
+mern-notetaking-app-notetaking-backend-1   | Database error: MongoServerSelectionError: getaddrinfo ENOTFOUND c.database-app.mongocluster.cosmos.azure.com
+mern-notetaking-app-notetaking-backend-1   |     at AbortSignal.<anonymous> (/app/node_modules/mongodb/lib/sdam/topology.js:289:34)
+mern-notetaking-app-notetaking-backend-1   |     at [nodejs.internal.kHybridDispatch] (node:internal/event_target:827:20)
+mern-notetaking-app-notetaking-backend-1   |     at AbortSignal.dispatchEvent (node:internal/event_target:762:26)
+mern-notetaking-app-notetaking-backend-1   |     at runAbort (node:internal/abort_controller:488:10)
+mern-notetaking-app-notetaking-backend-1   |     at abortSignal (node:internal/abort_controller:459:3)
+mern-notetaking-app-notetaking-backend-1   |     at TimeoutController.abort (node:internal/abort_controller:507:5)
+mern-notetaking-app-notetaking-backend-1   |     at Timeout.<anonymous> (/app/node_modules/mongodb/lib/utils.js:976:92)
+mern-notetaking-app-notetaking-backend-1   |     at listOnTimeout (node:internal/timers:608:17)
+mern-notetaking-app-notetaking-backend-1   |     at process.processTimers (node:internal/timers:543:7) {
+mern-notetaking-app-notetaking-backend-1   |   reason: TopologyDescription {
+mern-notetaking-app-notetaking-backend-1   |     type: 'Sharded',
+mern-notetaking-app-notetaking-backend-1   |     servers: Map(1) {
+mern-notetaking-app-notetaking-backend-1   |       'c.database-app.mongocluster.cosmos.azure.com:10260' => [ServerDescription]
+mern-notetaking-app-notetaking-backend-1   |     },
+mern-notetaking-app-notetaking-backend-1   |     stale: false,
+mern-notetaking-app-notetaking-backend-1   |     compatible: true,
+mern-notetaking-app-notetaking-backend-1   |     heartbeatFrequencyMS: 10000,
+mern-notetaking-app-notetaking-backend-1   |     localThresholdMS: 15,
+mern-notetaking-app-notetaking-backend-1   |     setName: null,
+mern-notetaking-app-notetaking-backend-1   |     maxElectionId: null,
+mern-notetaking-app-notetaking-backend-1   |     maxSetVersion: null,
+mern-notetaking-app-notetaking-backend-1   |     commonWireVersion: 0,
+mern-notetaking-app-notetaking-backend-1   |     logicalSessionTimeoutMinutes: null
+mern-notetaking-app-notetaking-backend-1   |   },
+mern-notetaking-app-notetaking-backend-1   |   code: undefined,
+mern-notetaking-app-notetaking-backend-1   |   Symbol(errorLabels): Set(0) {},
+mern-notetaking-app-notetaking-backend-1   |   [cause]: MongoNetworkError: getaddrinfo ENOTFOUND c.database-app.mongocluster.cosmos.azure.com
+mern-notetaking-app-notetaking-backend-1   |       at connectionFailureError (/app/node_modules/mongodb/lib/cmap/connect.js:353:20)
+mern-notetaking-app-notetaking-backend-1   |       at TLSSocket.<anonymous> (/app/node_modules/mongodb/lib/cmap/connect.js:268:44)
+mern-notetaking-app-notetaking-backend-1   |       at Object.onceWrapper (node:events:622:26)
+mern-notetaking-app-notetaking-backend-1   |       at TLSSocket.emit (node:events:507:28)
+mern-notetaking-app-notetaking-backend-1   |       at emitErrorNT (node:internal/streams/destroy:170:8)
+mern-notetaking-app-notetaking-backend-1   |       at emitErrorCloseNT (node:internal/streams/destroy:129:3)
+mern-notetaking-app-notetaking-backend-1   |       at process.processTicksAndRejections (node:internal/process/task_queues:90:21) {
+mern-notetaking-app-notetaking-backend-1   |     Symbol(errorLabels): Set(1) { 'ResetPool' },
+mern-notetaking-app-notetaking-backend-1   |     [cause]: Error: getaddrinfo ENOTFOUND c.database-app.mongocluster.cosmos.azure.com
+mern-notetaking-app-notetaking-backend-1   |         at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26) {
+mern-notetaking-app-notetaking-backend-1   |       errno: -3008,
+mern-notetaking-app-notetaking-backend-1   |       code: 'ENOTFOUND',
+mern-notetaking-app-notetaking-backend-1   |       syscall: 'getaddrinfo',
+mern-notetaking-app-notetaking-backend-1   |       hostname: 'c.database-app.mongocluster.cosmos.azure.com'
+mern-notetaking-app-notetaking-backend-1   |     }
+mern-notetaking-app-notetaking-backend-1   |   }
+mern-notetaking-app-notetaking-backend-1   | }
+mern-notetaking-app-notetaking-frontend-1  | 172.18.0.1 - - [16/May/2025:01:45:11 +0000] "GET /Programming HTTP/1.1" 304 0 "-" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36" "-"
+mern-notetaking-app-notetaking-frontend-1  | 172.18.0.1 - - [16/May/2025:01:45:11 +0000] "GET /assets/index-CLh0zY2L.js HTTP/1.1" 304 0 "http://localhost:3000/Programming" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36" "-"
+mern-notetaking-app-notetaking-frontend-1  | 172.18.0.1 - - [16/May/2025:01:45:11 +0000] "GET /assets/logo-CRVBucE1.png HTTP/1.1" 304 0 "http://localhost:3000/Programming" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36" "-"
+mern-notetaking-app-notetaking-frontend-1  | 172.18.0.1 - - [16/May/2025:01:45:11 +0000] "GET /logo.png HTTP/1.1" 304 0 "http://localhost:3000/Programming" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36" "-"
+mern-notetaking-app-notetaking-backend-1   | Validation successful
+mern-notetaking-app-notetaking-backend-1   | Validation successful
+mern-notetaking-app-notetaking-backend-1   | [
+mern-notetaking-app-notetaking-backend-1   |   {
+mern-notetaking-app-notetaking-backend-1   |     _id: new ObjectId('6820bbcd27bcec8b5a689de8'),
+mern-notetaking-app-notetaking-backend-1   |     user_id: new ObjectId('682025d81c383456bedb43e1'),
+mern-notetaking-app-notetaking-backend-1   |     label_name: 'Homework',
+mern-notetaking-app-notetaking-backend-1   |     created_at: 2025-05-11T15:01:33.033Z,
+mern-notetaking-app-notetaking-backend-1   |     __v: 0
+mern-notetaking-app-notetaking-backend-1   |   },
+mern-notetaking-app-notetaking-backend-1   |   {
+mern-notetaking-app-notetaking-backend-1   |     _id: new ObjectId('6822c2b36642dd20590fdae2'),
+mern-notetaking-app-notetaking-backend-1   |     user_id: new ObjectId('682025d81c383456bedb43e1'),
+mern-notetaking-app-notetaking-backend-1   |     label_name: 'Programming',
+mern-notetaking-app-notetaking-backend-1   |     created_at: 2025-05-13T03:55:31.423Z,
+mern-notetaking-app-notetaking-backend-1   |     __v: 0
+mern-notetaking-app-notetaking-backend-1   |   },
+mern-notetaking-app-notetaking-backend-1   |   {
+mern-notetaking-app-notetaking-backend-1   |     _id: new ObjectId('682311a185da04dee381e026'),
+mern-notetaking-app-notetaking-backend-1   |     user_id: new ObjectId('682025d81c383456bedb43e1'),
+mern-notetaking-app-notetaking-backend-1   |     label_name: 'Math',
+mern-notetaking-app-notetaking-backend-1   |     created_at: 2025-05-13T09:32:17.919Z,
+mern-notetaking-app-notetaking-backend-1   |     __v: 0
+mern-notetaking-app-notetaking-backend-1   |   }
+mern-notetaking-app-notetaking-backend-1   | ]
+mern-notetaking-app-notetaking-backend-1   | Validation successful
+mern-notetaking-app-notetaking-backend-1   | Validation successful
+mern-notetaking-app-notetaking-frontend-1  | 172.18.0.1 - - [16/May/2025:01:45:17 +0000] "GET /1747148174372-free-images.jpg HTTP/1.1" 304 0 "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36" "-"
+mern-notetaking-app-notetaking-frontend-1  | 172.18.0.1 - - [16/May/2025:01:45:17 +0000] "GET /1747303928694-1747144961292-6399a4d27711a5ad2c9bf5cd_ben-sweet-2LowviVHZ-E-unsplash-1.jpeg HTTP/1.1" 304 0 "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36" "-"
+mern-notetaking-app-notetaking-frontend-1  | 172.18.0.1 - - [16/May/2025:01:45:17 +0000] "GET /group.png HTTP/1.1" 304 0 "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36" "-"
+mern-notetaking-app-notetaking-frontend-1  | 172.18.0.1 - - [16/May/2025:01:45:17 +0000] "GET /cat.gif HTTP/1.1" 304 0 "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36" "-"
+mern-notetaking-app-notetaking-frontend-1  | 2025/05/16 07:27:10 [notice] 1#1: signal 3 (SIGQUIT) received, shutting down
+mern-notetaking-app-notetaking-frontend-1  | 2025/05/16 07:27:10 [notice] 25#25: gracefully shutting down
+mern-notetaking-app-notetaking-frontend-1  | 2025/05/16 07:27:10 [notice] 22#22: gracefully shutting down
+mern-notetaking-app-notetaking-frontend-1  | 2025/05/16 07:27:10 [notice] 23#23: gracefully shutting down
+mern-notetaking-app-notetaking-frontend-1  | 2025/05/16 07:27:10 [notice] 24#24: gracefully shutting down
+mern-notetaking-app-notetaking-frontend-1  | 2025/05/16 07:27:10 [notice] 22#22: exiting
+mern-notetaking-app-notetaking-frontend-1  | 2025/05/16 07:27:10 [notice] 24#24: exiting
+mern-notetaking-app-notetaking-frontend-1  | 2025/05/16 07:27:10 [notice] 25#25: exiting
+mern-notetaking-app-notetaking-frontend-1  | 2025/05/16 07:27:10 [notice] 23#23: exiting
+mern-notetaking-app-notetaking-frontend-1  | 2025/05/16 07:27:10 [notice] 24#24: exit
+mern-notetaking-app-notetaking-frontend-1  | 2025/05/16 07:27:10 [notice] 22#22: exit
+mern-notetaking-app-notetaking-frontend-1  | 2025/05/16 07:27:10 [notice] 25#25: exit
+mern-notetaking-app-notetaking-frontend-1  | 2025/05/16 07:27:10 [notice] 23#23: exit
+mern-notetaking-app-notetaking-frontend-1  | 2025/05/16 07:27:10 [notice] 1#1: signal 17 (SIGCHLD) received from 22
+mern-notetaking-app-notetaking-frontend-1  | 2025/05/16 07:27:10 [notice] 1#1: worker process 22 exited with code 0
+mern-notetaking-app-notetaking-frontend-1  | 2025/05/16 07:27:10 [notice] 1#1: signal 29 (SIGIO) received
+mern-notetaking-app-notetaking-frontend-1  | 2025/05/16 07:27:10 [notice] 1#1: signal 17 (SIGCHLD) received from 23
+mern-notetaking-app-notetaking-frontend-1  | 2025/05/16 07:27:10 [notice] 1#1: worker process 23 exited with code 0
+mern-notetaking-app-notetaking-frontend-1  | 2025/05/16 07:27:10 [notice] 1#1: signal 29 (SIGIO) received
+mern-notetaking-app-notetaking-frontend-1  | 2025/05/16 07:27:10 [notice] 1#1: signal 17 (SIGCHLD) received from 25
+mern-notetaking-app-notetaking-frontend-1  | 2025/05/16 07:27:10 [notice] 1#1: worker process 25 exited with code 0
+mern-notetaking-app-notetaking-frontend-1  | 2025/05/16 07:27:10 [notice] 1#1: signal 29 (SIGIO) received
+mern-notetaking-app-notetaking-frontend-1  | 2025/05/16 07:27:10 [notice] 1#1: signal 17 (SIGCHLD) received from 24
+mern-notetaking-app-notetaking-frontend-1  | 2025/05/16 07:27:10 [notice] 1#1: worker process 24 exited with code 0
+mern-notetaking-app-notetaking-frontend-1  | 2025/05/16 07:27:10 [notice] 1#1: exit
+mern-notetaking-app-notetaking-frontend-1 exited with code 0
+mern-notetaking-app-notetaking-frontend-1 exited with code 0
+mern-notetaking-app-notetaking-backend-1   | npm error path /app
+mern-notetaking-app-notetaking-backend-1   | npm error command failed
+mern-notetaking-app-notetaking-backend-1   | npm error signal SIGTERM
+mern-notetaking-app-notetaking-backend-1   | npm error command sh -c nodemon app.js
+mern-notetaking-app-notetaking-backend-1   | npm error A complete log of this run can be found in: /root/.npm/_logs/2025-05-15T23_13_08_833Z-debug-0.log
+mern-notetaking-app-notetaking-backend-1 exited with code 0

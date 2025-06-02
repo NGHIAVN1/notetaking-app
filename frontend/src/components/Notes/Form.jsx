@@ -33,6 +33,7 @@ const Container = styled(Box)`
   border-color: "#e0e0e0";
   margin: auto;
   margin-bottom: 2rem;
+  background-color: white;
   min-height: 30px;
   width: 400px;
 `;
@@ -102,7 +103,11 @@ const Form = ({ setSavingData, savingData }) => {
         setSavingData(!savingData);
 
         // Reset form
-        setState("");
+        setState({
+          title: "",
+          content: "",
+          image: "",
+        });
         setShowTextField(false);
         setList(false);
         setItems([]);
@@ -131,9 +136,8 @@ const Form = ({ setSavingData, savingData }) => {
           image: "",
         });
         setShowTextField(false);
-        setImageFile(null);
+        setImageFile({});
         setLoadingImage("");
-        setSuccess(false);
       }
     } catch (err) {
       console.error("Error creating note:", err);
@@ -187,6 +191,7 @@ const Form = ({ setSavingData, savingData }) => {
             InputProps={{ disableUnderline: true }}
             onClick={() => setShowTextField(true)}
             style={{ marginBottom: 10 }}
+            fullWidth
             onChange={inputHandle}
             name="title"
             value={state.title}
@@ -201,6 +206,7 @@ const Form = ({ setSavingData, savingData }) => {
                   placeholder="Ghi chú ..."
                   variant="standard"
                   InputProps={{ disableUnderline: true }}
+                  fullWidth
                   onChange={inputHandle}
                   name="content"
                   value={state.content}

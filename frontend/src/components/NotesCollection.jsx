@@ -37,7 +37,7 @@ const NotesCollection = () => {
         save={save}
       />
       <Box sx={{ display: "flex", justifyItems: "left" }}>
-        <NoteCollection dataNotes={localStorage.getItem("idCollection")} />
+        <NoteCollection save={save} />
       </Box>
     </Box>
   );

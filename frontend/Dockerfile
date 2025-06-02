@@ -1,5 +1,5 @@
 # Build Stage
-FROM node:alpine3.11 AS build
+FROM --platform=linux/amd64 node:alpine3.11 AS build
 
 RUN mkdir -p /app
 
@@ -30,12 +30,14 @@ ENV PROXY_LOGIN=${PROXY_LOGIN}
 RUN npm run build
 
 # Production Stage
-FROM nginx:1.28.0-alpine AS production
+FROM  --platform=linux/amd64 nginx:1.28.0-alpine AS production
 
-# Copy built files from previous stage
-COPY --from=build /app/dist /usr/share/nginx/html
-COPY --from=build /app/dist /etc/nginx/html
+# Copy frontend build files (e.g., React's build/)
+COPY --from=build /app/dist /usr/share/nginx/html/
+
+
+COPY --from=build /app/dist /usr/share/nginx/html/
+
 # Expose port 80 for the web server
 EXPOSE 80
 
-# Start Nginx

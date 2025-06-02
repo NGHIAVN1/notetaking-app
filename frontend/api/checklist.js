@@ -14,6 +14,17 @@ const checklistService = {
     return response.data;
   },
 
+  // Create a new checklist item for an existing note
+  createChecklistItem: async (data) => {
+    const token = localStorage.getItem("user-data");
+
+    const config = {
+      headers: { Authorization: `Bearer ${token}` },
+    };
+    const response = await instance.post("/checklist/add-item", data, config);
+    return response.data;
+  },
+
   // Get all user's checklists
   getUserChecklists: async () => {
     const token = localStorage.getItem("user-data");
@@ -70,6 +81,17 @@ const checklistService = {
       headers: { Authorization: `Bearer ${token}` },
     };
     const response = await instance.delete(`/checklists/${id}`, config);
+    return response.data;
+  },
+
+  // Delete a checklist item
+  deleteChecklistItem: async (itemId) => {
+    const token = localStorage.getItem("user-data");
+
+    const config = {
+      headers: { Authorization: `Bearer ${token}` },
+    };
+    const response = await instance.delete(`/checklist/delete-item/${itemId}`, config);
     return response.data;
   },
 };

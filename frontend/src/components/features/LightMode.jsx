@@ -7,8 +7,8 @@ export const lightMode = createTheme({
       white: "#fff",
     },
     background: {
-      paper: "#fff",
-      default: "#fff",
+      paper: "#87CEEB",
+      default: "#F0F8FF",
     },
   },
 });

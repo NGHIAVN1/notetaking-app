@@ -2,7 +2,7 @@ import axios from "axios";
 
 // Create axios instance
 const instance = axios.create({
-  baseURL: "http://127.0.0.1:5000/",
+  baseURL: "http://20.2.68.121:5000",
   headers: {
     timeout: 1000,
   },
@@ -33,9 +33,6 @@ instance.interceptors.response.use(
 
         // Redirect to login page
         window.location.href = "/login";
-
-        // Show an alert to the user (optional)
-        alert("Your session has expired. Please log in again.");
       }
     }
 

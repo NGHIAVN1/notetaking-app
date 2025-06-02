@@ -169,97 +169,100 @@ export default function Notes({ title, content, _id, save }) {
     <>
       <Box sx={{ width: "100%", p: 2 }}>
         <Masonry columns={{ xs: 1, sm: 2, md: 3, lg: 4, xl: 5 }} spacing={2}>
-          {notes.map((note) => (
-            <Card
-              key={note._id}
-              sx={{
-                width: "100%",
-                display: "flex",
-                flexDirection: "column",
-                borderRadius: 2,
-                boxShadow:
-                  "0 1px 2px 0 rgba(60,64,67,0.3), 0 1px 3px 1px rgba(60,64,67,0.15)",
-                transition: "box-shadow 0.2s ease-in-out",
-                border: "1px solid #e0e0e0",
-                overflow: "hidden",
-                breakInside: "avoid",
-                "&:hover": {
-                  boxShadow:
-                    "0 1px 3px 0 rgba(60,64,67,0.302), 0 4px 8px 3px rgba(60,64,67,0.149)",
-                },
-              }}
-            >
-              {note.image ? (
-                <CardMedia
-                  component="img"
-                  image={note.image}
-                  sx={{
-                    objectFit: "cover",
-                    maxHeight: 194,
-                    width: "100%",
-                  }}
-                />
-              ) : null}
-              <CardContent sx={{ flexGrow: 1, pb: 1 }}>
-                {note.title && (
-                  <Typography
-                    variant="subtitle1"
-                    component="div"
-                    sx={{
-                      fontWeight: 500,
-                      mb: 1,
-                    }}
-                  >
-                    {note.title}
-                  </Typography>
-                )}
-
-                {note.type === "checklist" ? (
-                  <LiveChecklistView
-                    checklists={note.checklists}
-                    onChecklistUpdated={handleChecklistUpdated}
-                  />
-                ) : (
-                  <Typography
-                    variant="body2"
-                    color="text.secondary"
-                    sx={{
-                      wordBreak: "break-word",
-                      whiteSpace: "pre-wrap",
-                    }}
-                  >
-                    {note.content}
-                  </Typography>
-                )}
-              </CardContent>
-
-              <CardActions
+          {notes
+            .filter((n) => !n.labels && n.deleted === false)
+            .map((note) => (
+              <Card
+                key={note._id}
                 sx={{
-                  padding: "4px 8px",
+                  width: "100%",
                   display: "flex",
-                  justifyContent: "flex-end",
-                  opacity: 0.6,
-                  "&:hover": { opacity: 1 },
+                  flexDirection: "column",
+                  borderRadius: 2,
+                  boxShadow:
+                    "0 1px 2px 0 rgba(60,64,67,0.3), 0 1px 3px 1px rgba(60,64,67,0.15)",
+                  transition: "box-shadow 0.2s ease-in-out",
+                  border: "1px solid #e0e0e0",
+                  overflow: "hidden",
+                  breakInside: "avoid",
+                  "&:hover": {
+                    boxShadow:
+                      "0 1px 3px 0 rgba(60,64,67,0.302), 0 4px 8px 3px rgba(60,64,67,0.149)",
+                  },
                 }}
               >
-                <Button
-                  size="small"
-                  onClick={() => handleEditClick(note)}
-                  sx={{ minWidth: "auto", p: "6px" }}
+                {note.image ? (
+                  <CardMedia
+                    component="img"
+                    image={`http://invulnerablemagican369.me/${note.image}`}
+                    sx={{
+                      objectFit: "cover",
+                      maxHeight: 194,
+                      width: "100%",
+                    }}
+                  />
+                ) : null}
+                <CardContent sx={{ flexGrow: 1, pb: 1 }}>
+                  {note.title && (
+                    <Typography
+                      variant="subtitle1"
+                      component="div"
+                      sx={{
+                        fontWeight: 500,
+                        mb: 1,
+                      }}
+                    >
+                      {note.title}
+                    </Typography>
+                  )}
+
+                  {note.type === "checklist" ? (
+                    <LiveChecklistView
+                      checklists={note.checklists}
+                      noteId={note._id}
+                      onChecklistUpdated={handleChecklistUpdated}
+                    />
+                  ) : (
+                    <Typography
+                      variant="body2"
+                      color="text.secondary"
+                      sx={{
+                        wordBreak: "break-word",
+                        whiteSpace: "pre-wrap",
+                      }}
+                    >
+                      {note.content}
+                    </Typography>
+                  )}
+                </CardContent>
+
+                <CardActions
+                  sx={{
+                    padding: "4px 8px",
+                    display: "flex",
+                    justifyContent: "flex-end",
+                    opacity: 0.6,
+                    "&:hover": { opacity: 1 },
+                  }}
                 >
-                  <EditIcon fontSize="small" />
-                </Button>
-                <Button
-                  size="small"
-                  color="error"
-                  onClick={() => handleDeleteClick(note._id)}
-                  sx={{ minWidth: "auto", p: "6px" }}
-                >
-                  <DeleteIcon fontSize="small" />
-                </Button>
-              </CardActions>
-            </Card>
-          ))}
+                  <Button
+                    size="small"
+                    onClick={() => handleEditClick(note)}
+                    sx={{ minWidth: "auto", p: "6px" }}
+                  >
+                    <EditIcon fontSize="small" />
+                  </Button>
+                  <Button
+                    size="small"
+                    color="error"
+                    onClick={() => handleDeleteClick(note._id)}
+                    sx={{ minWidth: "auto", p: "6px" }}
+                  >
+                    <DeleteIcon fontSize="small" />
+                  </Button>
+                </CardActions>
+              </Card>
+            ))}
         </Masonry>
       </Box>
 

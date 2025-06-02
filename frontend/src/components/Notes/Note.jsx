@@ -23,6 +23,7 @@ let addNotesBefore = {
   placeholder: "Ghi chu ...",
   boxShadow: 1,
   alignItems: "center",
+
   width: "500px",
   borderColor: "aqua",
 };
@@ -33,6 +34,8 @@ let addNotesAfter = {
   placeholder: "Tieu de ...",
   boxShadow: 3,
   alignItems: "",
+  backgroundColor: "white",
+
   width: "500px",
   height: "300px",
 };

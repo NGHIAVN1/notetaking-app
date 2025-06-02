@@ -28,7 +28,7 @@ const ListForm = ({ onSave, initialItems = [] }) => {
 
   const handleAddItem = () => {
     if (newItem.trim()) {
-      setItems([...items, { text: newItem, checked: false }]);
+      setItems([...items, { text: newItem, is_checked: false }]);
       setNewItem("");
     }
   };
@@ -42,7 +42,7 @@ const ListForm = ({ onSave, initialItems = [] }) => {
 
   const handleToggleItem = (index) => {
     const updatedItems = [...items];
-    updatedItems[index].checked = !updatedItems[index].checked;
+    updatedItems[index].is_checked = !updatedItems[index].is_checked;
     setItems(updatedItems);
   };
 
@@ -75,7 +75,7 @@ const ListForm = ({ onSave, initialItems = [] }) => {
             <ListItemIcon sx={{ minWidth: "36px", maxWidth: "300px" }}>
               <Checkbox
                 edge="start"
-                checked={item.checked}
+                checked={item.is_checked}
                 onChange={() => handleToggleItem(index)}
                 sx={{ p: 0.5 }}
               />

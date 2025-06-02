@@ -5,7 +5,7 @@ import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
-import Masonry from "@mui/lab/Masonry";
+import { Grid } from "@mui/material"; // Using Grid instead of Masonry
 
 import {
   CardActionArea,
@@ -29,6 +29,7 @@ import NoteAddIcon from "@mui/icons-material/NoteAdd";
 import EditNote from "./EditNote";
 import LiveChecklistView from "./LiveChecklistView";
 import collectionService from "../../../api/collection";
+import systemNotes from "../../../api/notes"; // Added missing import
 
 export default function NoteCollection({ save }) {
   const [notes, setNotes] = useState([]);
@@ -170,115 +171,117 @@ export default function NoteCollection({ save }) {
   return (
     <>
       <Box sx={{ width: "100%", p: 2 }}>
-        <Masonry columns={{ xs: 1, sm: 2, md: 3, lg: 4, xl: 5 }} spacing={2}>
+        <Grid container spacing={2}>
           {notes
             .filter((f) => f.labels === localStorage.getItem("idCollection"))
             .map((note) => (
-              <Card
-                key={note._id}
-                sx={{
-                  width: "100%",
-                  display: "flex",
-                  flexDirection: "column",
-                  borderRadius: 2,
-                  boxShadow:
-                    "0 1px 2px 0 rgba(60,64,67,0.3), 0 1px 3px 1px rgba(60,64,67,0.15)",
-                  transition: "box-shadow 0.2s ease-in-out",
-                  border: "1px solid #e0e0e0",
-                  overflow: "hidden",
-                  breakInside: "avoid",
-                  "&:hover": {
-                    boxShadow:
-                      "0 1px 3px 0 rgba(60,64,67,0.302), 0 4px 8px 3px rgba(60,64,67,0.149)",
-                  },
-                }}
-              >
-                {note.image ? (
-                  <CardMedia
-                    component="img"
-                    image={note.image}
-                    sx={{
-                      objectFit: "cover",
-                      maxHeight: 194,
-                      width: "100%",
-                    }}
-                  />
-                ) : null}
-                <CardContent sx={{ flexGrow: 1, pb: 1 }}>
-                  {note.title && (
-                    <Typography
-                      variant="subtitle1"
-                      component="div"
-                      sx={{
-                        fontWeight: 500,
-                        mb: 1,
-                      }}
-                    >
-                      {note.title}
-                    </Typography>
-                  )}
-
-                  {note.type === "checklist" ? (
-                    <LiveChecklistView
-                      checklists={note.checklists}
-                      onChecklistUpdated={handleChecklistUpdated}
-                    />
-                  ) : (
-                    <Typography
-                      variant="body2"
-                      color="text.secondary"
-                      sx={{
-                        wordBreak: "break-word",
-                        whiteSpace: "pre-wrap",
-                      }}
-                    >
-                      {note.content}
-                    </Typography>
-                  )}
-                </CardContent>
-                <Box
-                  display="flex"
-                  minHeight={"25px"}
-                  width={"100px"}
-                  borderRadius={10}
-                  paddingLeft={"10px"}
-                  justifyContent={"center"}
-                  textAlign={"center"}
+              <Grid item xs={12} sm={6} md={4} lg={3} xl={2.4} key={note._id}>
+                <Card
                   sx={{
-                    backgroundColor: "rgba(28, 197, 28, 0.2)",
-                  }}
-                >
-                  <span>{localStorage.getItem("nameCollection")}</span>
-                </Box>
-
-                <CardActions
-                  sx={{
-                    padding: "4px 8px",
+                    width: "100%",
                     display: "flex",
-                    justifyContent: "flex-end",
-                    opacity: 0.6,
-                    "&:hover": { opacity: 1 },
+                    flexDirection: "column",
+                    borderRadius: 2,
+                    boxShadow:
+                      "0 1px 2px 0 rgba(60,64,67,0.3), 0 1px 3px 1px rgba(60,64,67,0.15)",
+                    transition: "box-shadow 0.2s ease-in-out",
+                    border: "1px solid #e0e0e0",
+                    overflow: "hidden",
+                    height: "100%", // Make sure all cards in a row have same height
+                    "&:hover": {
+                      boxShadow:
+                        "0 1px 3px 0 rgba(60,64,67,0.302), 0 4px 8px 3px rgba(60,64,67,0.149)",
+                    },
                   }}
                 >
-                  <Button
-                    size="small"
-                    onClick={() => handleEditClick(note)}
-                    sx={{ minWidth: "auto", p: "6px" }}
+                  {note.image ? (
+                    <CardMedia
+                      component="img"
+                      image={note.image}
+                      sx={{
+                        objectFit: "cover",
+                        maxHeight: 194,
+                        width: "100%",
+                      }}
+                    />
+                  ) : null}
+                  <CardContent sx={{ flexGrow: 1, pb: 1 }}>
+                    {note.title && (
+                      <Typography
+                        variant="subtitle1"
+                        component="div"
+                        sx={{
+                          fontWeight: 500,
+                          mb: 1,
+                        }}
+                      >
+                        {note.title}
+                      </Typography>
+                    )}
+
+                    {note.type === "checklist" ? (
+                      <LiveChecklistView
+                        checklists={note.checklists}
+                        noteId={note._id}
+                        onChecklistUpdated={handleChecklistUpdated}
+                      />
+                    ) : (
+                      <Typography
+                        variant="body2"
+                        color="text.secondary"
+                        sx={{
+                          wordBreak: "break-word",
+                          whiteSpace: "pre-wrap",
+                        }}
+                      >
+                        {note.content}
+                      </Typography>
+                    )}
+                  </CardContent>
+                  <Box
+                    display="flex"
+                    minHeight={"25px"}
+                    width={"100px"}
+                    borderRadius={10}
+                    paddingLeft={"10px"}
+                    justifyContent={"center"}
+                    textAlign={"center"}
+                    sx={{
+                      backgroundColor: "rgba(28, 197, 28, 0.2)",
+                    }}
                   >
-                    <EditIcon fontSize="small" />
-                  </Button>
-                  <Button
-                    size="small"
-                    color="error"
-                    onClick={() => handleDeleteClick(note._id)}
-                    sx={{ minWidth: "auto", p: "6px" }}
+                    <span>{localStorage.getItem("nameCollection")}</span>
+                  </Box>
+
+                  <CardActions
+                    sx={{
+                      padding: "4px 8px",
+                      display: "flex",
+                      justifyContent: "flex-end",
+                      opacity: 0.6,
+                      "&:hover": { opacity: 1 },
+                    }}
                   >
-                    <DeleteIcon fontSize="small" />
-                  </Button>
-                </CardActions>
-              </Card>
+                    <Button
+                      size="small"
+                      onClick={() => handleEditClick(note)}
+                      sx={{ minWidth: "auto", p: "6px" }}
+                    >
+                      <EditIcon fontSize="small" />
+                    </Button>
+                    <Button
+                      size="small"
+                      color="error"
+                      onClick={() => handleDeleteClick(note._id)}
+                      sx={{ minWidth: "auto", p: "6px" }}
+                    >
+                      <DeleteIcon fontSize="small" />
+                    </Button>
+                  </CardActions>
+                </Card>
+              </Grid>
             ))}
-        </Masonry>
+        </Grid>
       </Box>
 
       {/* Edit Dialog */}

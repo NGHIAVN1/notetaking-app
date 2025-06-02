@@ -13,7 +13,7 @@ const auth = require('./src/routes/routes');
 const routes = require('./src/routes/routes');
 // const { authenticateToken } = require('./src/middlewares/auth');
 const corsOptions = {
-  origin: ['http://localhost:5173', 'http://localhost:3000'], // Add your frontend URLs
+  origin: ['http://localhost:3000', 'http://20.2.68.121:3000'], // Add your frontend URLs
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'], // Include all methods you use
   allowedHeaders: ['Content-Type', 'Authorization', 'x-access-token'],
   credentials: true,

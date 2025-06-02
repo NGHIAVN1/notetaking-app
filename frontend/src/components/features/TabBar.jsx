@@ -10,17 +10,22 @@ import List from "@mui/material/List";
 import LightbulbIcon from "@mui/icons-material/Lightbulb";
 import DeleteIcon from "@mui/icons-material/Delete";
 import { styled } from "@mui/material/styles";
+import AddIcon from "@mui/icons-material/Add";
 import { Button, Typography } from "@mui/material";
 import CreateTags from "./CreateTags.jsx";
 import labelService from "../../../api/label.js";
 
 const NavLink = styled(Link)(({ theme }) => ({
   textDecoration: "none",
-  color: theme.palette.text.primary,
+  color: "blueviolet",
   width: "100%",
+  "&:hover": {
+    textDecoration: "none",
+    color: "blueviolet",
+  },
 }));
 
-const TabBar = () => {
+const TabBar = ({ theme }) => {
   const [open, setOpen] = useState(false);
   const [labels, setLabels] = useState([]);
   const [refreshLabels, setRefreshLabels] = useState(0);
@@ -42,14 +47,31 @@ const TabBar = () => {
     }
   };
   return (
-    <List sx={{ width: "100%", bgcolor: "background.paper" }}>
+    <List
+      sx={{
+        width: "100%",
+        height: "100vh",
+        color: "blueviolet",
+        bgcolor: "background.paper",
+      }}
+    >
       <ListItemButton>
         <ListItemIcon>
           <LightbulbIcon />
         </ListItemIcon>
-        <NavLink to="/">Ghi chú</NavLink>
+        <NavLink to="/">
+          <Typography>Ghi chú</Typography>
+        </NavLink>
       </ListItemButton>
-
+      <React.Fragment>
+        <ListItemButton onClick={handleClickOpen}>
+          <ListItemIcon>
+            <AddIcon />
+          </ListItemIcon>
+          <Typography>Choose Notes Kindle</Typography>
+        </ListItemButton>
+        <CreateTags close={(success) => handleClose(success)} props={open} />
+      </React.Fragment>
       <React.Fragment>
         <ListItemButton onClick={handleClickOpen}>
           <ListItemIcon>
@@ -81,7 +103,9 @@ const TabBar = () => {
         <ListItemIcon>
           <DeleteIcon />
         </ListItemIcon>
-        <NavLink to="/trash">Thùng rác</NavLink>
+        <NavLink to="/trash">
+          <Typography>Thùng rác</Typography>
+        </NavLink>
       </ListItemButton>
     </List>
   );

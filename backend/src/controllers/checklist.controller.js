@@ -5,7 +5,6 @@ module.exports = {
 // Add these functions to your module.exports
 async createChecklistNotes(req, res) {
     try {
-      // const checklistIds = [];
       const { title, checklist_items } = req.body;
       const checklistIds = [];
 
@@ -13,8 +12,8 @@ async createChecklistNotes(req, res) {
         for (const item of checklist_items) {
           const newItem = new ChecklistItem({
             content: item.content || item.text,
-            isChecked: item.isChecked || false,
-            user_id: req.decoded._id // Important: Associate with the current user
+            is_checked: item.is_checked || false, 
+            user_id: req.decoded._id
           });
           const savedItem = await newItem.save();
           checklistIds.push(savedItem._id); // Store the ObjectId
@@ -32,7 +31,6 @@ async createChecklistNotes(req, res) {
       // Save to database
       const savedNote = await newNote.save();
       
-      // Respond with the created resource and 201 Created status
       return res.status(201).json({
         success: true,
         message: "Note with checklists created successfully",
@@ -87,7 +85,7 @@ async GetNoteById(req, res) {
   try {
     const note = await dataNote.findOne({
       _id: req.params.id,
-      user_id: req.decoded._id  // Security: ensure user can only access their own notes
+      user_id: req.decoded._id 
     }).populate('checklists');
     
     if (!note) {
@@ -125,7 +123,9 @@ async GetChecklistNotes(req, res) {
 async updateChecklistItem(req, res) {
   try {
     const { id } = req.params;
-    const { content, isChecked } = req.body;
+    const { content, is_checked } = req.body; // Changed from isChecked to is_checked
+    
+    console.log("Updating checklist item:", id, "with data:", req.body);
     
     // Find the checklist item
     const checklistItem = await ChecklistItem.findById(id);
@@ -136,10 +136,12 @@ async updateChecklistItem(req, res) {
     
     // Update the fields
     if (content !== undefined) checklistItem.content = content;
-    if (isChecked !== undefined) checklistItem.isChecked = isChecked;
+    if (is_checked !== undefined) checklistItem.is_checked = is_checked; // Changed from isChecked to is_checked
     
     // Save the updated item
     const updatedItem = await checklistItem.save();
+    
+    console.log("Updated item:", updatedItem);
     
     res.status(200).json({
       success: true,
@@ -155,6 +157,103 @@ async updateChecklistItem(req, res) {
     }
     
     res.status(500).json({ error: "Failed to update checklist item" });
+  }
+
+},
+
+// Add a new checklist item to an existing note
+async addChecklistItem(req, res) {
+  try {
+    const { content, note_id } = req.body;
+    
+    if (!content) {
+      return res.status(400).json({ error: "Content is required" });
+    }
+    
+    // Find the note to make sure it exists and belongs to the user
+    const note = await dataNote.findOne({
+      _id: note_id,
+      user_id: req.decoded._id
+    });
+    
+    if (!note) {
+      return res.status(404).json({ error: "Note not found" });
+    }
+    
+    // Create the new checklist item
+    const newItem = new ChecklistItem({
+      content,
+      is_checked: false
+    });
+    
+    // Save the new item
+    const savedItem = await newItem.save();
+    
+    // Add the new item to the note's checklists array
+    note.checklists.push(savedItem._id);
+    await note.save();
+    
+    return res.status(201).json({
+      success: true,
+      message: "Checklist item added successfully",
+      item: savedItem
+    });
+  } catch (error) {
+    console.error("Error adding checklist item:", error);
+    
+    if (error.name === 'ValidationError') {
+      return res.status(400).json({ 
+        error: "Validation error", 
+        details: Object.values(error.errors).map(err => err.message)
+      });
+    }
+    
+    if (error.name === 'CastError') {
+      return res.status(400).json({ 
+        error: "Invalid data format",
+        details: `Invalid ${error.path}: ${error.value}`
+      });
+    }
+    
+    return res.status(500).json({ 
+      error: "Failed to add checklist item",
+      message: process.env.NODE_ENV === 'production' 
+        ? "An unexpected error occurred" 
+        : error.message
+    });
+  }
+},
+
+// Delete a checklist item
+async deleteChecklistItem(req, res) {
+  try {
+    const { id } = req.params;
+    
+    // Find and delete the checklist item
+    const deletedItem = await ChecklistItem.findByIdAndDelete(id);
+    
+    if (!deletedItem) {
+      return res.status(404).json({ error: "Checklist item not found" });
+    }
+    
+    // Remove reference from any notes that contain this item
+    await dataNote.updateMany(
+      { checklists: id },
+      { $pull: { checklists: id } }
+    );
+    
+    return res.status(200).json({
+      success: true,
+      message: "Checklist item deleted successfully"
+    });
+  } catch (error) {
+    console.error("Error deleting checklist item:", error);
+    
+    if (error.name === 'CastError') {
+      return res.status(400).json({ error: "Invalid checklist item ID format" });
+    }
+    
+    return res.status(500).json({ error: "Failed to delete checklist item" });
   }
 }
   

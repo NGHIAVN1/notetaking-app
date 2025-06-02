@@ -22,7 +22,7 @@ const HomePage = () => {
         flexGrow: "1",
         width: "80%",
         float: "right",
-        marginTop: "100px",
+        marginTop: "50px",
       }}
     >
       {/* <HomPage /> */}

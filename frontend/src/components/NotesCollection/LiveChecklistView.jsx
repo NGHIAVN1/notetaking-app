@@ -37,6 +37,7 @@ const LiveChecklistView = ({
   // Initialize local checklist state from props
   useEffect(() => {
     if (checklists && Array.isArray(checklists)) {
+      console.log("Received checklists:", checklists);
       setLocalChecklists([...checklists]);
     } else {
       setLocalChecklists([]);
@@ -47,15 +48,22 @@ const LiveChecklistView = ({
   const handleToggleCheck = async (item) => {
     if (readOnly) return;
 
+    console.log("Toggling item:", item); // Debug: log the item being toggled
+    console.log("Current is_checked state:", item.is_checked); // Debug: log current state
+
     // Find the item in the local state
     const itemIndex = localChecklists.findIndex((i) => i._id === item._id);
     if (itemIndex === -1) return;
 
     // Create a new array with the updated item - crucial for React to detect state change
     const updatedChecklists = [...localChecklists];
+    const newIsCheckedValue = !updatedChecklists[itemIndex].is_checked;
+
+    console.log("Setting is_checked to:", newIsCheckedValue); // Debug: log new state
+
     updatedChecklists[itemIndex] = {
       ...updatedChecklists[itemIndex],
-      isChecked: !updatedChecklists[itemIndex].isChecked,
+      is_checked: newIsCheckedValue,
     };
 
     // Update UI immediately (optimistic update)
@@ -63,12 +71,16 @@ const LiveChecklistView = ({
     setUpdatingItemId(item._id);
 
     try {
-      // Then make API call in background
-      await checklistService.updateChecklistItem(item._id, {
-        isChecked: !item.isChecked,
+      // Then make API call in background with explicit boolean value
+      const response = await checklistService.updateChecklistItem(item._id, {
+        is_checked: newIsCheckedValue,
       });
+      console.log("API response:", response); // Debug: log API response
 
       // No need to update UI again on success, it's already updated
+      if (onChecklistUpdated) {
+        onChecklistUpdated();
+      }
     } catch (error) {
       console.error("Error updating checklist item:", error);
 
@@ -76,7 +88,7 @@ const LiveChecklistView = ({
       const revertedChecklists = [...localChecklists];
       revertedChecklists[itemIndex] = {
         ...revertedChecklists[itemIndex],
-        isChecked: item.isChecked, // Revert to original state
+        is_checked: item.is_checked, // Revert to original state
       };
 
       setLocalChecklists(revertedChecklists);
@@ -217,7 +229,7 @@ const LiveChecklistView = ({
               ) : (
                 <Checkbox
                   edge="start"
-                  checked={item.isChecked}
+                  checked={item.is_checked}
                   disableRipple
                   disabled={readOnly}
                   onChange={() => handleToggleCheck(item)}
@@ -267,8 +279,8 @@ const LiveChecklistView = ({
                 primary={item.content}
                 sx={{
                   margin: 0,
-                  textDecoration: item.isChecked ? "line-through" : "none",
-                  color: item.isChecked ? "text.secondary" : "text.primary",
+                  textDecoration: item.is_checked ? "line-through" : "none",
+                  color: item.is_checked ? "text.secondary" : "text.primary",
                   wordBreak: "break-word",
                   "& .MuiTypography-root": {
                     fontSize: "0.875rem", // Smaller font size

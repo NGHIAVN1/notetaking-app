@@ -20,9 +20,14 @@ const lightMode = createTheme({
       black: "#000",
       white: "#fff",
     },
+    typography: {
+      fontFamily: "Roboto, sans-serif",
+      color: "blueviolet",
+    },
+
     background: {
       paper: "#fff",
-      default: "#fff",
+      default: "#87CEEB",
     },
   },
 });

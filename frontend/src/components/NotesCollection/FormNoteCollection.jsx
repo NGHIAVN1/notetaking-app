@@ -215,6 +215,7 @@ const FormNoteCollection = ({ dataNotes, setSavingData, savingData }) => {
             size="small"
             placeholder={showTextField ? "Tiêu đề" : "Ghi chú"}
             variant="standard"
+            fullWidth
             InputProps={{ disableUnderline: true }}
             onClick={() => setShowTextField(true)}
             style={{ marginBottom: 10 }}
@@ -231,6 +232,7 @@ const FormNoteCollection = ({ dataNotes, setSavingData, savingData }) => {
                   rows={4}
                   placeholder="Ghi chú ..."
                   variant="standard"
+                  fullWidth
                   InputProps={{ disableUnderline: true }}
                   onChange={(e) => setContent(e.target.value)}
                   name="content"

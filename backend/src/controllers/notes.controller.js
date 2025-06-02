@@ -1,51 +1,31 @@
 const dataNote = require('../models/notes');
 const fs = require('fs');
+const path = require('path');
 
 module.exports= {
     async CreateNotes(req, res){
    
-
-        // const getImageName = files.image.originalFilename;
-        // const randomNumber = Math.floor(Math.random() * 999999);
-        // const newImageName = randomNumber + getImageName;
-        // console.log(process.env.DIR_PATH);
-        // const newPath = path.join(
-        //   process.env.DIR_PATH,
-        //   process.env.NEW_PATH,
-        //   newImageName
-        // );
-  
-        // console.log('newpath string :' + newPath);
-        // files.image.originalFilename = newImageName;
-        
-        // console.log(req.decoded._id)
         console.log("www" + req.file);
+
+        // Store just the filename or path as a string, not the entire file object
+        const imagePath = req.file ? req.file.filename : undefined;
+        
         const data = new dataNote({
             user_id: req.decoded._id,
             title: req.body.title,
-            image: req.file,
+            image: imagePath, // Save just the filename, not the entire file object
             content: req.body.content,
             collectionId: req.body.collectionId
         });
             try {
-                console.log(req);
                 const dataNote = await data.save();
-    
                 res.status(200).json(dataNote);
             } catch (error) {
                 console.log(error)
                 res.status(500).send("not found")
             } 
         
-
     },
-
-
-        /**
-     * Creates a new note with checklist items
-     * @param {Request} req - Express request object
-     * @param {Response} res - Express response object
-     */
 
     async ReadNotes(req, res) {
       try {

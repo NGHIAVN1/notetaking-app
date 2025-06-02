@@ -31,6 +31,7 @@ const users = [
 
 let body = {
   marginTop: "48px",
+
   width: "100%",
   height: "100%",
   right: 0,
@@ -123,7 +124,7 @@ export default function Root({ protectRoute }) {
           float: "left",
         }}
       >
-        <TabBar setLoadingCollection={setLoadingCollection} />
+        <TabBar setLoadingCollection={setLoadingCollection} theme={theme} />
       </Box>
 
       <DataContext.Provider
